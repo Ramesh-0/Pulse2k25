@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Spline from '@splinetool/react-spline';
 
 const CountdownItem = ({ value, label }) => (
   <motion.div
@@ -25,6 +26,35 @@ const Hero = () => {
     minutes: 0,
     seconds: 0
   });
+  
+  const splineRef = useRef();
+  const sectionRef = useRef();
+
+  function onLoad(splineApp) {
+    splineRef.current = splineApp;
+  }
+
+  // Track mouse movements across the entire page
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      if (splineRef.current) {
+        // Get mouse coordinates
+        const x = event.clientX;
+        const y = event.clientY;
+        
+        // Emit event to Spline with mouse position
+        splineRef.current.emitEvent('mousemove', { x, y });
+      }
+    };
+
+    // Add event listener to the window
+    window.addEventListener('mousemove', handleMouseMove);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
   useEffect(() => {
     const targetDate = new Date('2025-04-24T00:00:00').getTime();
@@ -74,7 +104,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen pt-24 pb-16 relative bg-gradient-to-b from-[#040d09] to-[#071912] overflow-hidden">
+    <section 
+      ref={sectionRef} 
+      className="min-h-screen pt-24 pb-16 relative bg-gradient-to-b from-[#040d09] to-[#071912] overflow-hidden"
+    >
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl" />
@@ -82,11 +115,20 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/5 rounded-full blur-3xl" />
       </div>
 
+      {/* 3D Robot Model */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] hidden lg:block">
+        <Spline
+          scene="https://prod.spline.design/OZG4wgFZT11nQKMJ/scene.splinecode"
+          className="w-full h-full"
+          onLoad={onLoad}
+        />
+      </div>
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="container mx-auto px-4 relative"
+        className="container mx-auto px-4 relative lg:ml-[400px]"
       >
         <motion.div variants={itemVariants} className="text-center mb-8">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
