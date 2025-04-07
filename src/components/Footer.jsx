@@ -61,7 +61,7 @@ const Footer = () => {
                 </h3>
               </Link>
               <p className="text-emerald-100/70 leading-relaxed">
-                A 24-hour hackathon organized by IEEE JU Student Branch. Join us for an exciting journey of innovation and creativity.
+              Pulse.exe, is the annual technical event organized by the IT Department of MCKV Institute of Engineering, is set to deliver an exceptional experience for students looking to prove their mettle in the fields of critical thinking, vigilance, and curiosity.
               </p>
             </motion.div>
 
@@ -96,13 +96,13 @@ const Footer = () => {
               <FooterSection title="Contact">
                 <ul className="space-y-3 text-emerald-100/70">
                   <li className="flex items-center gap-2">
-                    <span>📍</span> Jadavpur University, Kolkata
+                    <span>📍</span> MCKV Institute of Engineering, Liluah, Howrah
                   </li>
                   <li className="flex items-center gap-2">
                     <span>📧</span> contact@pulse2k25.com
                   </li>
                   <li className="flex items-center gap-2">
-                    <span>📞</span> +91 98765 43210
+                    <span>📞</span> +91 98753 61048
                   </li>
                 </ul>
               </FooterSection>
@@ -160,7 +160,7 @@ const Footer = () => {
             className="text-center pt-8 border-t border-emerald-900/30"
           >
             <p className="text-emerald-100/70">
-              © 2025 PULSE2k25. All rights reserved. Made with ❤️ by IEEE JU Student Branch
+              © 2025 PULSE2k25. All rights reserved. Made with ❤️ by the IT Department of MCKV Institute of Engineering
             </p>
           </motion.div>
         </motion.div>

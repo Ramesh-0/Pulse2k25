@@ -85,23 +85,23 @@ const Timeline = () => {
   const events = [
     {
       title: "Registration Opens",
-      date: "January 25, 2024",
-      description: "Begin your journey by registering for DoubleSlash 3.0. Don't miss out on this opportunity to showcase your skills!"
+      date: "April 10, 2025",
+      description: "Begin your journey by registering for PULSE.exe. Don't miss out on this opportunity to showcase your skills!"
     },
     {
       title: "First Round",
-      date: "February 9, 2024",
-      description: "An online preliminary round to test your mettle."
+      date: "April 24, 2025",
+      description: "An Elimination Round to test your mettle. That contains Aptitude, Sudoku, Coding and much more exsiting Queestions."
     },
     {
-      title: "Hackathon Begins",
-      date: "February 15, 2024",
-      description: "The coding marathon begins! Get ready for 24 hours of innovation, creativity, and intense development."
+      title: "Idea Submission",
+      date: "April 24, 2025",
+      description: "Showcase your innovative thinking and creativity to the world."
     },
     {
-      title: "Project Submission",
-      date: "February 16, 2024",
-      description: "Submit your projects and prepare for the final presentations. May the best team win!"
+      title: "Finale",
+      date: "April 25, 2025",
+      description: "Build your prototype and hack the event. May the best team win!"
     }
   ];
 
