@@ -1,5 +1,22 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+
+const CountdownItem = ({ value, label }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="bg-[#071912] rounded-xl p-4 border border-emerald-900/30 backdrop-blur-sm
+               hover:border-emerald-400/50 transition-all duration-300 w-full md:w-32
+               hover:shadow-[0_0_25px_rgba(52,211,153,0.15)]"
+  >
+    <div className="text-3xl md:text-4xl font-bold bg-gradient-to-b from-white to-emerald-200 bg-clip-text text-transparent">
+      {String(value).padStart(2, '0')}
+    </div>
+    <div className="text-emerald-400 text-sm font-medium">{label}</div>
+  </motion.div>
+);
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -10,11 +27,17 @@ const Hero = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2025-02-15T00:00:00').getTime();
+    const targetDate = new Date('2025-04-24T00:00:00').getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
       const difference = targetDate - now;
+
+      if (difference < 0) {
+        clearInterval(timer);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
 
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -27,53 +50,96 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20"></div>
-      
-      <div className="container mx-auto px-4 py-20 text-center relative z-10">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          PULSE<span className="text-blue-500">2k25</span>
-        </h1>
-        
-        <p className="text-xl md:text-2xl mb-8 text-gray-300">
-          Code. Create. Innovate.
-        </p>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
-          <div className="bg-gray-800/50 p-4 rounded-lg">
-            <div className="text-3xl font-bold">{timeLeft.days}</div>
-            <div className="text-sm text-gray-400">Days</div>
-          </div>
-          <div className="bg-gray-800/50 p-4 rounded-lg">
-            <div className="text-3xl font-bold">{timeLeft.hours}</div>
-            <div className="text-sm text-gray-400">Hours</div>
-          </div>
-          <div className="bg-gray-800/50 p-4 rounded-lg">
-            <div className="text-3xl font-bold">{timeLeft.minutes}</div>
-            <div className="text-sm text-gray-400">Minutes</div>
-          </div>
-          <div className="bg-gray-800/50 p-4 rounded-lg">
-            <div className="text-3xl font-bold">{timeLeft.seconds}</div>
-            <div className="text-sm text-gray-400">Seconds</div>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <p className="text-lg text-gray-300">February 15-16, 2025</p>
-          <p className="text-lg text-gray-300">Jadavpur University, Kolkata</p>
-        </div>
-
-        <div className="mt-12 space-x-4">
-          <Link to="/register" className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-md text-lg font-semibold transition-colors">
-            Register Now
-          </Link>
-          <Link to="/tracks" className="bg-gray-800 hover:bg-gray-700 px-8 py-3 rounded-md text-lg font-semibold transition-colors">
-            View Tracks
-          </Link>
-        </div>
+    <section className="min-h-screen pt-24 pb-16 relative bg-gradient-to-b from-[#040d09] to-[#071912] overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/5 rounded-full blur-3xl" />
       </div>
-    </div>
+
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="container mx-auto px-4 relative"
+      >
+        <motion.div variants={itemVariants} className="text-center mb-8">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
+              PULSE
+            </span>
+            <span className="text-white">2k25</span>
+          </h1>
+          <p className="text-emerald-300 text-xl md:text-2xl font-medium">
+            Code. Create. Innovate.
+          </p>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="text-center mb-12">
+          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+          A technical event by the IT Department of MCKVIE.
+          </p>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="mb-12">
+          <h2 className="text-center text-2xl font-bold text-white mb-8">Hacking Begins In</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            <CountdownItem value={timeLeft.days} label="Days" />
+            <CountdownItem value={timeLeft.hours} label="Hours" />
+            <CountdownItem value={timeLeft.minutes} label="Minutes" />
+            <CountdownItem value={timeLeft.seconds} label="Seconds" />
+          </div>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="text-center space-y-4">
+          <p className="text-emerald-300 text-lg">April 24-25, 2025</p>
+          <p className="text-emerald-300 text-lg">MCKV Institute of Engineering, Liluah</p>
+          <div className="flex justify-center gap-4 mt-8">
+            <Link
+              to="/register"
+              className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500
+                       px-8 py-3 rounded-lg text-white font-medium transition-all duration-300
+                       hover:shadow-[0_0_20px_rgba(52,211,153,0.3)] transform hover:-translate-y-0.5"
+            >
+              Register Now
+            </Link>
+            <Link
+              to="/tracks"
+              className="bg-[#071912] border border-emerald-500/30 hover:border-emerald-400
+                       px-8 py-3 rounded-lg text-emerald-300 font-medium transition-all duration-300
+                       hover:shadow-[0_0_20px_rgba(52,211,153,0.15)] hover:text-emerald-200 transform hover:-translate-y-0.5"
+            >
+              View Tracks
+            </Link>
+          </div>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
 

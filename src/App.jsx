@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Tracks from './components/Tracks';
+import Timeline from './components/Timeline';
 import Footer from './components/Footer';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
               <>
                 <Hero />
                 <Tracks />
+                <Timeline />
               </>
             } />
             {/* Add more routes as needed */}

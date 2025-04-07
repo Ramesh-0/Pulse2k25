@@ -1,82 +1,131 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-900 text-white p-4 fixed w-full top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold">
-          PULSE<span className="text-blue-500">2k25</span>
-        </Link>
-        
-        {/* Mobile menu button */}
-        <button
-          className="md:hidden text-white focus:outline-none"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            {isMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
-
-        {/* Desktop menu */}
-        <div className="hidden md:flex space-x-6">
-          <Link to="/events" className="hover:text-blue-400 transition-colors">Events</Link>
-          <Link to="/schedule" className="hover:text-blue-400 transition-colors">Schedule</Link>
-          <Link to="/tracks" className="hover:text-blue-400 transition-colors">Tracks</Link>
-          <Link to="/sponsors" className="hover:text-blue-400 transition-colors">Sponsors</Link>
-          <Link to="/faq" className="hover:text-blue-400 transition-colors">FAQ</Link>
-        </div>
-
-        <div className="hidden md:flex items-center space-x-4">
-          <Link to="/login" className="hover:text-blue-400 transition-colors">Login</Link>
-          <Link to="/register" className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md transition-colors">
-            Register
+    <motion.nav 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="bg-[#040d09]/80 backdrop-blur-md border-b border-emerald-900/30 text-white fixed w-full top-0 z-50"
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
+          <Link to="/" className="text-2xl font-bold flex items-center gap-2">
+            <span className="bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
+              PULSE
+            </span>
+            <span className="text-white">2k25</span>
           </Link>
-        </div>
-      </div>
+          
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden text-white focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
 
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-gray-900 p-4">
-          <div className="flex flex-col space-y-4">
-            <Link to="/events" className="hover:text-blue-400 transition-colors">Events</Link>
-            <Link to="/schedule" className="hover:text-blue-400 transition-colors">Schedule</Link>
-            <Link to="/tracks" className="hover:text-blue-400 transition-colors">Tracks</Link>
-            <Link to="/sponsors" className="hover:text-blue-400 transition-colors">Sponsors</Link>
-            <Link to="/faq" className="hover:text-blue-400 transition-colors">FAQ</Link>
-            <div className="pt-4 border-t border-gray-700">
-              <Link to="/login" className="block mb-4 hover:text-blue-400 transition-colors">Login</Link>
-              <Link to="/register" className="block bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md text-center transition-colors">
-                Register
-              </Link>
-            </div>
+          {/* Desktop menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            <NavLink to="/events">Events</NavLink>
+            <NavLink to="/schedule">Schedule</NavLink>
+            <NavLink to="/tracks">Tracks</NavLink>
+            <NavLink to="/sponsors">Sponsors</NavLink>
+            <NavLink to="/faq">FAQ</NavLink>
+          </div>
+
+          <div className="hidden md:flex items-center space-x-4">
+            <Link to="/login" className="text-emerald-300 hover:text-emerald-200 transition-colors">
+              Login
+            </Link>
+            <Link 
+              to="/register" 
+              className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500
+                         px-4 py-2 rounded-lg text-white font-medium transition-all duration-300
+                         hover:shadow-[0_0_20px_rgba(52,211,153,0.3)] transform hover:-translate-y-0.5"
+            >
+              Register
+            </Link>
           </div>
         </div>
-      )}
-    </nav>
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden bg-[#071912] border-t border-emerald-900/30 py-4"
+          >
+            <div className="flex flex-col space-y-4 px-4">
+              <MobileNavLink to="/events">Events</MobileNavLink>
+              <MobileNavLink to="/schedule">Schedule</MobileNavLink>
+              <MobileNavLink to="/tracks">Tracks</MobileNavLink>
+              <MobileNavLink to="/sponsors">Sponsors</MobileNavLink>
+              <MobileNavLink to="/faq">FAQ</MobileNavLink>
+              <div className="pt-4 border-t border-emerald-900/30">
+                <Link to="/login" className="block text-emerald-300 hover:text-emerald-200 mb-4">
+                  Login
+                </Link>
+                <Link 
+                  to="/register" 
+                  className="block bg-gradient-to-r from-emerald-500 to-emerald-600 px-4 py-2 rounded-lg 
+                           text-center text-white font-medium hover:from-emerald-400 hover:to-emerald-500"
+                >
+                  Register
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </div>
+    </motion.nav>
   );
 };
+
+const NavLink = ({ to, children }) => (
+  <Link 
+    to={to} 
+    className="text-gray-300 hover:text-emerald-300 transition-colors relative group"
+  >
+    {children}
+    <span className="absolute inset-x-0 bottom-0 h-0.5 bg-emerald-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+  </Link>
+);
+
+const MobileNavLink = ({ to, children }) => (
+  <Link 
+    to={to} 
+    className="text-gray-300 hover:text-emerald-300 transition-colors block"
+  >
+    {children}
+  </Link>
+);
 
 export default Navbar; 
