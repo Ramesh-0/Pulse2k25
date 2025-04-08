@@ -135,7 +135,10 @@ const Timeline = () => {
   };
 
   return (
-    <section className="py-20 relative bg-gradient-to-b from-[#040d09] to-[#071912]">
+    <section 
+      id="timeline-section"
+      className="py-20 relative bg-gradient-to-b from-[#040d09] to-[#071912]"
+    >
       <div className="container mx-auto px-4">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

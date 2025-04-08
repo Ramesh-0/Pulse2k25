@@ -1,9 +1,27 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const scrollToTimeline = (e) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    
+    if (location.pathname !== '/') {
+      // If not on homepage, navigate to home page first
+      navigate('/', { state: { scrollToTimeline: true } });
+    } else {
+      // Already on homepage, just scroll
+      const timelineSection = document.getElementById('timeline-section');
+      if (timelineSection) {
+        timelineSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <motion.nav 
@@ -52,9 +70,14 @@ const Navbar = () => {
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <NavLink to="/events">Events</NavLink>
-            <NavLink to="/schedule">Schedule</NavLink>
-            <NavLink to="/tracks">Tracks</NavLink>
+            <NavLink to="/">Home</NavLink>
+            <a href="#" onClick={scrollToTimeline} className="text-gray-300 hover:text-emerald-300 transition-colors relative group">
+              Schedule
+              <span className="absolute inset-x-0 bottom-0 h-0.5 bg-emerald-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </a>
+            <NavLink to="/room-allotment">Room Allotment</NavLink>
+            <NavLink to="/details">Details</NavLink>
+            <NavLink to="/about">About Us</NavLink>
             <NavLink to="/sponsors">Sponsors</NavLink>
             <NavLink to="/faq">FAQ</NavLink>
           </div>
@@ -84,9 +107,13 @@ const Navbar = () => {
             className="md:hidden bg-[#071912] border-t border-emerald-900/30 py-4"
           >
             <div className="flex flex-col space-y-4 px-4">
-              <MobileNavLink to="/events">Events</MobileNavLink>
-              <MobileNavLink to="/schedule">Schedule</MobileNavLink>
-              <MobileNavLink to="/tracks">Tracks</MobileNavLink>
+              <MobileNavLink to="/">Home</MobileNavLink>
+              <a href="#" onClick={scrollToTimeline} className="text-gray-300 hover:text-emerald-300 transition-colors block">
+                Schedule
+              </a>
+              <MobileNavLink to="/room-allotment">Room Allotment</MobileNavLink>
+              <MobileNavLink to="/details">Details</MobileNavLink>
+              <MobileNavLink to="/about">About Us</MobileNavLink>
               <MobileNavLink to="/sponsors">Sponsors</MobileNavLink>
               <MobileNavLink to="/faq">FAQ</MobileNavLink>
               <div className="pt-4 border-t border-emerald-900/30">
