@@ -83,7 +83,6 @@ const Navbar = () => {
             <NavLink to="/room-allotment">Room Allotment</NavLink>
             <NavLink to="/details">Details</NavLink>
             <NavLink to="/about">About Us</NavLink>
-            <NavLink to="/sponsors">Sponsors</NavLink>
             <NavLink to="/faq">FAQ</NavLink>
           </div>
 
@@ -117,7 +116,6 @@ const Navbar = () => {
               <MobileNavLink to="/room-allotment" setIsMenuOpen={setIsMenuOpen}>Room Allotment</MobileNavLink>
               <MobileNavLink to="/details" setIsMenuOpen={setIsMenuOpen}>Details</MobileNavLink>
               <MobileNavLink to="/about" setIsMenuOpen={setIsMenuOpen}>About Us</MobileNavLink>
-              <MobileNavLink to="/sponsors" setIsMenuOpen={setIsMenuOpen}>Sponsors</MobileNavLink>
               <MobileNavLink to="/faq" setIsMenuOpen={setIsMenuOpen}>FAQ</MobileNavLink>
               <div className="pt-4 border-t border-emerald-900/30">
                 <Link 

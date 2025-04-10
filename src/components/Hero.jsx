@@ -106,7 +106,7 @@ const Hero = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="min-h-screen pt-24 pb-16 relative bg-gradient-to-b from-[#040d09] to-[#071912] overflow-hidden"
+      className="min-h-screen pt-8 pb-16 relative bg-gradient-to-b from-[#040d09] to-[#071912] overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0">

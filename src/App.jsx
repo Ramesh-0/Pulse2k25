@@ -9,8 +9,8 @@ import Footer from './components/Footer';
 import TeamRoomAllotment from './components/TeamRoomAllotment';
 import Details from './components/Details';
 import AboutUs from './components/AboutUs';
-import Sponsors from './components/Sponsors';
 import FAQ from './components/FAQ';
+import AssociatedLogos from './components/AssociatedLogos';
 
 // Component to handle scroll after navigation
 const ScrollHandler = () => {
@@ -42,6 +42,7 @@ function App() {
           <Routes>
             <Route path="/" element={
               <>
+                <AssociatedLogos />
                 <Hero />
                 <Tracks />
                 <Timeline />
@@ -51,7 +52,6 @@ function App() {
             <Route path="/room-allotment" element={<TeamRoomAllotment />} />
             <Route path="/details" element={<Details />} />
             <Route path="/about" element={<AboutUs />} />
-            <Route path="/sponsors" element={<Sponsors />} />
             <Route path="/faq" element={<FAQ />} />
             {/* Add more routes as needed */}
           </Routes>

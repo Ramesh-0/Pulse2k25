@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import defaultImage from '../images/team/default.jpg';
 import rameshImage from '../images/team/Ramesh.jpg';
 import arfaImage from '../images/team/Arfa.jpg';
 import aditiImage from '../images/team/Aditi.jpg';
@@ -9,11 +8,8 @@ import manshiImage from '../images/team/Manshi.jpg';
 import sukanyaImage from '../images/team/Sukanya.jpg';
 import abhishekImage from '../images/team/Abhishek.jpg';
 import kaushaniImage from '../images/team/Kaushani.jpg';
-import sanjanaImage from '../images/team/sanjana.jpg';
 import tabrezImage from '../images/team/Tabrez.jpg';
 import mayukhImage from '../images/team/Mayukh.jpg';
-import sinchitaImage from '../images/team/sinchita.jpg';
-import sarthakImage from '../images/team/sarthak.jpg';
 import diyaImage from '../images/team/Diya.jpg';
 
 const TeamMember = ({ name, image, index, delay }) => {
@@ -69,27 +65,27 @@ const AboutUs = () => {
     { name: "Sneha Jha", image: snehaImage },
     { name: "Manshi Ram", image: manshiImage },
     { name: "Sukanya Saha", image: sukanyaImage },
-    { name: "Ritika Barui", image: defaultImage },
-    { name: "Avinandan Chakroborty", image: defaultImage },
-    { name: "Ayan Kundu", image: defaultImage },
-    { name: "Ayush Paul", image: defaultImage },
+    { name: "Ritika Barui", image: "https://ui-avatars.com/api/?name=Ritika+Barui&background=0D9488&color=fff&size=150" },
+    { name: "Avinandan Chakroborty", image: "https://ui-avatars.com/api/?name=Avinandan+Chakroborty&background=0D9488&color=fff&size=150" },
+    { name: "Ayan Kundu", image: "https://ui-avatars.com/api/?name=Ayan+Kundu&background=0D9488&color=fff&size=150" },
+    { name: "Ayush Paul", image: "https://ui-avatars.com/api/?name=Ayush+Paul&background=0D9488&color=fff&size=150" },
     { name: "Abhishek Chaurasiya", image: abhishekImage },
     { name: "Kaushani Chandra", image: kaushaniImage },
-    { name: "L.C Abhinash", image: sanjanaImage },
+    { name: "L.C Abhinash", image: "https://ui-avatars.com/api/?name=L.C+Abhinash&background=0D9488&color=fff&size=150" },
     { name: "Md Tabrez Hossain", image: tabrezImage },
     { name: "Mayukh Das", image: mayukhImage },
-    { name: "Abhiroop Mukherjee", image: sinchitaImage },
-    { name: "Swarnabha Rakshit", image: sarthakImage },
+    { name: "Abhiroop Mukherjee", image: "https://ui-avatars.com/api/?name=Abhiroop+Mukherjee&background=0D9488&color=fff&size=150" },
+    { name: "Swarnabha Rakshit", image: "https://ui-avatars.com/api/?name=Swarnabha+Rakshit&background=0D9488&color=fff&size=150" },
     { name: "Diya Sarkar", image: diyaImage }
   ]);
 
   const [advisors] = useState([
-    { name: "Sanchari Pandey", image: defaultImage },
-    { name: "Avik Sen", image: defaultImage },
-    { name: "SK Mohammad Afzal", image: defaultImage },
-    { name: "Advisor 4", image: defaultImage },
-    { name: "Advisor 5", image: defaultImage },
-    { name: "Advisor 6", image: defaultImage }
+    { name: "Sanchari Pandey", image: "https://ui-avatars.com/api/?name=Sanchari+Pandey&background=0D9488&color=fff&size=150" },
+    { name: "Avik Sen", image: "https://ui-avatars.com/api/?name=Avik+Sen&background=0D9488&color=fff&size=150" },
+    { name: "SK Mohammad Afzal", image: "https://ui-avatars.com/api/?name=SK+Mohammad+Afzal&background=0D9488&color=fff&size=150" },
+    { name: "Advisor 4", image: "https://ui-avatars.com/api/?name=Advisor+4&background=0D9488&color=fff&size=150" },
+    { name: "Advisor 5", image: "https://ui-avatars.com/api/?name=Advisor+5&background=0D9488&color=fff&size=150" },
+    { name: "Advisor 6", image: "https://ui-avatars.com/api/?name=Advisor+6&background=0D9488&color=fff&size=150" }
   ]);
 
   const [visibleTeamMembers, setVisibleTeamMembers] = useState([]);
