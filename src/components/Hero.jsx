@@ -164,10 +164,10 @@ const Hero = () => {
         {/* Logos Section */}
         <motion.div 
           variants={itemVariants} 
-          className="grid md:grid-cols-5 gap-1 md:gap-2 items-center justify-items-center mb-6 max-w-2xl mx-auto"
+          className="grid md:grid-cols-5 gap-0.5 md:gap-2 items-center justify-items-center mb-6 max-w-2xl mx-auto"
         >
           {/* First row - 3 logos */}
-          <div className="md:hidden col-span-full grid grid-cols-3 gap-1 w-full place-items-center">
+          <div className="md:hidden col-span-full grid grid-cols-3 gap-0.5 w-full place-items-center">
             {logos.slice(0, 3).map((logo, index) => (
               <motion.div
                 key={index}
@@ -180,11 +180,11 @@ const Hero = () => {
                   src={logo.src}
                   alt={logo.alt}
                   className={`relative z-10 filter brightness-100 hover:brightness-110 transition-all duration-300 ${
-                    logo.alt === 'IIC Logo' ? 'w-[70px] h-[45px] md:w-[100px] md:h-[60px]' :
-                    logo.alt === 'AICTE Logo' ? 'w-[60px] h-[60px] md:w-[80px] md:h-[80px]' :
-                    logo.alt === 'NAAC Logo' ? 'w-[55px] h-[55px] md:w-[75px] md:h-[75px]' :
-                    logo.alt === 'College Logo' ? 'w-[60px] h-[60px] md:w-[80px] md:h-[80px]' :
-                    'w-[55px] h-[55px] md:w-[75px] md:h-[75px]'
+                    logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] md:w-[100px] md:h-[60px]' :
+                    logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] md:w-[80px] md:h-[80px]' :
+                    logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] md:w-[75px] md:h-[75px]' :
+                    logo.alt === 'College Logo' ? 'w-[75px] h-[75px] md:w-[80px] md:h-[80px]' :
+                    'w-[130px] h-[130px] md:w-[75px] md:h-[75px]'
                   }`}
                   style={{
                     filter: logo.alt === 'NBA Logo' ? 'brightness(200%)' : 'none'
@@ -195,7 +195,7 @@ const Hero = () => {
           </div>
 
           {/* Second row - 2 logos */}
-          <div className="md:hidden col-span-full grid grid-cols-2 gap-1 w-full place-items-center mt-1">
+          <div className="md:hidden col-span-full grid grid-cols-2 gap-0.5 w-full place-items-center mt-0.5">
             {logos.slice(3).map((logo, index) => (
               <motion.div
                 key={index + 3}
@@ -208,11 +208,11 @@ const Hero = () => {
                   src={logo.src}
                   alt={logo.alt}
                   className={`relative z-10 filter brightness-100 hover:brightness-110 transition-all duration-300 ${
-                    logo.alt === 'IIC Logo' ? 'w-[70px] h-[45px] md:w-[100px] md:h-[60px]' :
-                    logo.alt === 'AICTE Logo' ? 'w-[60px] h-[60px] md:w-[80px] md:h-[80px]' :
-                    logo.alt === 'NAAC Logo' ? 'w-[55px] h-[55px] md:w-[75px] md:h-[75px]' :
-                    logo.alt === 'College Logo' ? 'w-[60px] h-[60px] md:w-[80px] md:h-[80px]' :
-                    'w-[55px] h-[55px] md:w-[75px] md:h-[75px]'
+                    logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] md:w-[100px] md:h-[60px]' :
+                    logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] md:w-[80px] md:h-[80px]' :
+                    logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] md:w-[75px] md:h-[75px]' :
+                    logo.alt === 'College Logo' ? 'w-[75px] h-[75px] md:w-[80px] md:h-[80px]' :
+                    'w-[130px] h-[130px] md:w-[75px] md:h-[75px]'
                   }`}
                   style={{
                     filter: logo.alt === 'NBA Logo' ? 'brightness(200%)' : 'none'
@@ -236,11 +236,11 @@ const Hero = () => {
                   src={logo.src}
                   alt={logo.alt}
                   className={`relative z-10 filter brightness-100 hover:brightness-110 transition-all duration-300 ${
-                    logo.alt === 'IIC Logo' ? 'w-[70px] h-[45px] md:w-[100px] md:h-[60px]' :
-                    logo.alt === 'AICTE Logo' ? 'w-[60px] h-[60px] md:w-[80px] md:h-[80px]' :
-                    logo.alt === 'NAAC Logo' ? 'w-[55px] h-[55px] md:w-[75px] md:h-[75px]' :
-                    logo.alt === 'College Logo' ? 'w-[60px] h-[60px] md:w-[80px] md:h-[80px]' :
-                    'w-[55px] h-[55px] md:w-[75px] md:h-[75px]'
+                    logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] md:w-[100px] md:h-[60px]' :
+                    logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] md:w-[80px] md:h-[80px]' :
+                    logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] md:w-[75px] md:h-[75px]' :
+                    logo.alt === 'College Logo' ? 'w-[75px] h-[75px] md:w-[80px] md:h-[80px]' :
+                    'w-[130px] h-[130px] md:w-[75px] md:h-[75px]'
                   }`}
                   style={{
                     filter: logo.alt === 'NBA Logo' ? 'brightness(200%)' : 'none'
