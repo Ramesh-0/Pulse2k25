@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import clglogo from '../images/clglogo.png';
-import calendarIcon from '../images/calendar-icon.svg';
 
 const Details = () => {
   const containerVariants = {
@@ -114,8 +113,20 @@ const Details = () => {
               {/* Date and Time */}
               <div className="text-center flex flex-col items-center">
                 <div className="w-24 h-24 mb-4">
-                  <img src={calendarIcon} alt="Calendar" className="w-full h-full" 
-                       onError={(e) => {e.target.src = 'https://img.icons8.com/pastel-glyph/64/22c55e/calendar--v1.png'}} />
+                  <svg 
+                    className="w-full h-full text-emerald-500" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path 
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </div>
                 <p className="text-xl font-semibold text-white mb-2">Thursday, 25-26 April, 2025</p>
                 <p className="text-lg text-emerald-300">Reporting Time: 9:30am</p>
