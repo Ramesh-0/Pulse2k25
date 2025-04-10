@@ -5,11 +5,16 @@ const TeamRoomAllotment = () => {
   const [billNo, setBillNo] = useState('');
   const [roomDetails, setRoomDetails] = useState(null);
   const [eventDetails, setEventDetails] = useState({
-    name: 'PULSE 2K25',
-    venue: 'Main Auditorium',
-    date: 'April 15-17, 2025',
-    organizer: 'Technical Committee'
+    name: 'PULSE.exe 2K25',
+    venue: 'IT Department',
+    date: 'April 23-24, 2025',
+    organizer: 'IT Department'
   });
+  
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   // Generate dummy data for bill numbers 1-100
   const generateDummyData = () => {
@@ -20,7 +25,7 @@ const TeamRoomAllotment = () => {
         teamName: `Team ${i}`,
         participantCount: Math.floor(Math.random() * 5) + 2, // 2-6 participants
         room: i <= 40 ? 'A201' : 'A202', // Bill 1-40 in A201, rest in A202
-        eventName: ['Hackathon', 'Paper Presentation', 'Coding Challenge', 'Project Expo'][Math.floor(Math.random() * 4)],
+        eventName: ['Elimination Round', 'Idea Submission', 'Final Prototype'][Math.floor(Math.random() * 4)],
         status: ['Confirmed', 'Pending', 'Completed'][Math.floor(Math.random() * 3)]
       };
     }

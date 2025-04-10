@@ -57,7 +57,7 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    const targetDate = new Date('2025-04-24T00:00:00').getTime();
+    const targetDate = new Date('2025-04-23T00:00:00').getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -133,7 +133,7 @@ const Hero = () => {
         <motion.div variants={itemVariants} className="text-center mb-8">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
             <span className="bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
-              PULSE
+              PULSE.exe
             </span>
             <span className="text-white">2k25</span>
           </h1>
@@ -159,7 +159,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="text-center space-y-4">
-          <p className="text-emerald-300 text-lg">April 24-25, 2025</p>
+          <p className="text-emerald-300 text-lg">April 23-24, 2025</p>
           <p className="text-emerald-300 text-lg">MCKV Institute of Engineering, Liluah</p>
           <div className="flex justify-center gap-4 mt-8">
             <Link

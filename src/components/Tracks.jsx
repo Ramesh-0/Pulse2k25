@@ -104,28 +104,28 @@ const Gallery = () => {
   // Sample gallery images - replace with actual images
   const galleryImages = [
     {
-      src: "/images/gallery/event1.jpg", 
-      alt: "Technical Workshop"
+      src: "src/images/Advisors.jpg", 
+      alt: "Advisors"
     },
     {
-      src: "/images/gallery/event2.jpg", 
-      alt: "Coding Competition"
+      src: "src/images/Aptitude.jpg", 
+      alt: "Aptitude"
     },
     {
-      src: "/images/gallery/event3.jpg", 
-      alt: "Hackathon Session"
+      src: "src/images/Coding.jpg", 
+      alt: "Coding"
     },
     {
-      src: "/images/gallery/event4.jpg", 
-      alt: "Team Collaboration"
+      src: "src/images/Inaugration.jpg", 
+      alt: "Inaugration"
     },
     {
-      src: "/images/gallery/event5.jpg", 
-      alt: "Project Presentation"
+      src: "src/images/Organizing.jpg", 
+      alt: "Organizing Team"
     },
     {
-      src: "/images/gallery/event6.jpg", 
-      alt: "Award Ceremony"
+      src: "src/images/Participants.jpg", 
+      alt: "Participants"
     }
   ];
 

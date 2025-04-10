@@ -50,12 +50,12 @@ const Footer = () => {
           viewport={{ once: true }}
           className="container mx-auto px-4 py-16"
         >
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <motion.div variants={itemVariants}>
               <Link to="/" className="inline-block mb-6">
                 <h3 className="text-2xl font-bold">
                   <span className="bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
-                    PULSE
+                    PULSE.exe
                   </span>
                   <span className="text-white">2k25</span>
                 </h3>
@@ -66,40 +66,13 @@ const Footer = () => {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <FooterSection title="Quick Links">
-                <ul className="space-y-3">
-                  <li>
-                    <Link to="/events" className="text-emerald-100/70 hover:text-emerald-300 transition-colors">
-                      Events
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/schedule" className="text-emerald-100/70 hover:text-emerald-300 transition-colors">
-                      Schedule
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/tracks" className="text-emerald-100/70 hover:text-emerald-300 transition-colors">
-                      Tracks
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/faq" className="text-emerald-100/70 hover:text-emerald-300 transition-colors">
-                      FAQ
-                    </Link>
-                  </li>
-                </ul>
-              </FooterSection>
-            </motion.div>
-
-            <motion.div variants={itemVariants}>
               <FooterSection title="Contact">
                 <ul className="space-y-3 text-emerald-100/70">
                   <li className="flex items-center gap-2">
                     <span>📍</span> MCKV Institute of Engineering, Liluah, Howrah
                   </li>
                   <li className="flex items-center gap-2">
-                    <span>📧</span> contact@pulse2k25.com
+                    <span>📧</span> pulseexe2k25@gmail.com
                   </li>
                   <li className="flex items-center gap-2">
                     <span>📞</span> +91 98753 61048

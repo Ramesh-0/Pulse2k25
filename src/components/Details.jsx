@@ -99,7 +99,7 @@ const Details = () => {
                   <img src="/images/calendar-icon.svg" alt="Calendar" className="w-full h-full" 
                        onError={(e) => {e.target.src = 'https://img.icons8.com/pastel-glyph/64/22c55e/calendar--v1.png'}} />
                 </div>
-                <p className="text-xl font-semibold text-white mb-2">Wednesday, 10th April, 2024</p>
+                <p className="text-xl font-semibold text-white mb-2">Wednesday, 23-24 April, 2024</p>
                 <p className="text-lg text-emerald-300">Reporting Time: 10:00am</p>
               </div>
               
@@ -143,7 +143,7 @@ const Details = () => {
               </p>
               
               <p className="text-gray-300 text-lg">
-                Rs. 50 entry fee per team to be paid in cash at room no. A202 (2nd Floor) 
+                Rs. 60 entry fee per team to be paid in cash at room no. A202 (2nd Floor) 
                 On successful registration and payment you will be issued a receipt.
               </p>
               
