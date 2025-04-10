@@ -90,6 +90,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Link 
               to="/register" 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500
                          px-4 py-2 rounded-lg text-white font-medium transition-all duration-300
                          hover:shadow-[0_0_20px_rgba(52,211,153,0.3)] transform hover:-translate-y-0.5"
@@ -109,18 +110,22 @@ const Navbar = () => {
             className="md:hidden bg-[#071912] border-t border-emerald-900/30 py-4"
           >
             <div className="flex flex-col space-y-4 px-4">
-              <MobileNavLink to="/">Home</MobileNavLink>
+              <MobileNavLink to="/" setIsMenuOpen={setIsMenuOpen}>Home</MobileNavLink>
               <a href="#" onClick={scrollToTimeline} className="text-gray-300 hover:text-emerald-300 transition-colors block">
                 Schedule
               </a>
-              <MobileNavLink to="/room-allotment">Room Allotment</MobileNavLink>
-              <MobileNavLink to="/details">Details</MobileNavLink>
-              <MobileNavLink to="/about">About Us</MobileNavLink>
-              <MobileNavLink to="/sponsors">Sponsors</MobileNavLink>
-              <MobileNavLink to="/faq">FAQ</MobileNavLink>
+              <MobileNavLink to="/room-allotment" setIsMenuOpen={setIsMenuOpen}>Room Allotment</MobileNavLink>
+              <MobileNavLink to="/details" setIsMenuOpen={setIsMenuOpen}>Details</MobileNavLink>
+              <MobileNavLink to="/about" setIsMenuOpen={setIsMenuOpen}>About Us</MobileNavLink>
+              <MobileNavLink to="/sponsors" setIsMenuOpen={setIsMenuOpen}>Sponsors</MobileNavLink>
+              <MobileNavLink to="/faq" setIsMenuOpen={setIsMenuOpen}>FAQ</MobileNavLink>
               <div className="pt-4 border-t border-emerald-900/30">
                 <Link 
                   to="/register" 
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setIsMenuOpen(false);
+                  }}
                   className="block bg-gradient-to-r from-emerald-500 to-emerald-600 px-4 py-2 rounded-lg 
                            text-center text-white font-medium hover:from-emerald-400 hover:to-emerald-500"
                 >
@@ -135,23 +140,38 @@ const Navbar = () => {
   );
 };
 
-const NavLink = ({ to, children }) => (
-  <Link 
-    to={to} 
-    className="text-gray-300 hover:text-emerald-300 transition-colors relative group"
-  >
-    {children}
-    <span className="absolute inset-x-0 bottom-0 h-0.5 bg-emerald-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-  </Link>
-);
+const NavLink = ({ to, children }) => {
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-const MobileNavLink = ({ to, children }) => (
-  <Link 
-    to={to} 
-    className="text-gray-300 hover:text-emerald-300 transition-colors block"
-  >
-    {children}
-  </Link>
-);
+  return (
+    <Link 
+      to={to} 
+      onClick={handleClick}
+      className="text-gray-300 hover:text-emerald-300 transition-colors relative group"
+    >
+      {children}
+      <span className="absolute inset-x-0 bottom-0 h-0.5 bg-emerald-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+    </Link>
+  );
+};
+
+const MobileNavLink = ({ to, children, setIsMenuOpen }) => {
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
+  return (
+    <Link 
+      to={to} 
+      onClick={handleClick}
+      className="text-gray-300 hover:text-emerald-300 transition-colors block"
+    >
+      {children}
+    </Link>
+  );
+};
 
 export default Navbar; 

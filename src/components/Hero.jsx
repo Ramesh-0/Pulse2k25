@@ -57,7 +57,7 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    const targetDate = new Date('2025-04-23T00:00:00').getTime();
+    const targetDate = new Date('2025-04-25T00:00:00').getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -159,7 +159,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="text-center space-y-4">
-          <p className="text-emerald-300 text-lg">April 23-24, 2025</p>
+          <p className="text-emerald-300 text-lg">April 25-26, 2025</p>
           <p className="text-emerald-300 text-lg">MCKV Institute of Engineering, Liluah</p>
           <div className="flex justify-center gap-4 mt-8">
             <Link
@@ -169,14 +169,6 @@ const Hero = () => {
                        hover:shadow-[0_0_20px_rgba(52,211,153,0.3)] transform hover:-translate-y-0.5"
             >
               Register Now
-            </Link>
-            <Link
-              to="/tracks"
-              className="bg-[#071912] border border-emerald-500/30 hover:border-emerald-400
-                       px-8 py-3 rounded-lg text-emerald-300 font-medium transition-all duration-300
-                       hover:shadow-[0_0_20px_rgba(52,211,153,0.15)] hover:text-emerald-200 transform hover:-translate-y-0.5"
-            >
-              View Tracks
             </Link>
           </div>
         </motion.div>

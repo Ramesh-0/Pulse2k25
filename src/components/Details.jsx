@@ -40,6 +40,22 @@ const Details = () => {
         initial="hidden"
         animate="visible"
       >
+        {/* Institute Logo */}
+        <motion.div
+          variants={itemVariants}
+          className="flex justify-center mb-12"
+        >
+          <img
+            src="src/images/clglogo.png"
+            alt="MCKVIE Logo"
+            className="h-24 w-auto"
+            onError={(e) => {
+              e.target.src = 'https://via.placeholder.com/200x100/071912/22c55e?text=MCKVIE';
+              e.target.onerror = null;
+            }}
+          />
+        </motion.div>
+
         <motion.h1 
           variants={itemVariants}
           className="text-4xl font-bold mb-12 text-center"
@@ -92,23 +108,27 @@ const Details = () => {
                         hover:shadow-[0_0_25px_rgba(52,211,153,0.15)]">
             <h3 className="text-3xl font-bold mb-8 text-center text-white">When & Where</h3>
             
-            <div className="flex flex-col md:flex-row justify-center items-center gap-12">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-20">
               {/* Date and Time */}
               <div className="text-center flex flex-col items-center">
                 <div className="w-24 h-24 mb-4">
                   <img src="/images/calendar-icon.svg" alt="Calendar" className="w-full h-full" 
                        onError={(e) => {e.target.src = 'https://img.icons8.com/pastel-glyph/64/22c55e/calendar--v1.png'}} />
                 </div>
-                <p className="text-xl font-semibold text-white mb-2">Wednesday, 23-24 April, 2024</p>
-                <p className="text-lg text-emerald-300">Reporting Time: 10:00am</p>
+                <p className="text-xl font-semibold text-white mb-2">Thursday, 25-26 April, 2025</p>
+                <p className="text-lg text-emerald-300">Reporting Time: 9:30am</p>
               </div>
               
               {/* Venue */}
               <div className="text-center flex flex-col items-center">
-                <div className="w-24 h-24 mb-4">
-                  <img src="/images/venue-icon.svg" alt="Venue" className="w-full h-full"
-                       onError={(e) => {e.target.src = 'https://img.icons8.com/pastel-glyph/64/22c55e/university.png'}} />
+                <div className="w-32 h-32 mb-6">
+                  <img 
+                    src="https://img.icons8.com/dotty/50/40C057/admission.png" 
+                    alt="admission"
+                    className="w-full h-full object-contain" 
+                  />
                 </div>
+               
                 <p className="text-xl font-semibold text-white mb-2">2nd Floor, IT Department, MCKVIE</p>
                 <p className="text-lg text-emerald-300">243, GT Road North, Howrah, West Bengal 711 204</p>
               </div>

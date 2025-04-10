@@ -45,7 +45,7 @@ const TeamMember = ({ name, image, index, delay }) => {
 
 const AboutUs = () => {
   const [coordinators] = useState([
-    { name: "Ramesh Kumar Singh", image: "src/images/team/ramesh.jpg" },
+    { name: "Ramesh Kumar Singh", image: "src/images/team/Ramesh.jpg" },
     { name: "Arfa Ahmed Ansari", image: "src/images/team/Arfa.jpg" }
   ]);
 
@@ -69,9 +69,9 @@ const AboutUs = () => {
   ]);
 
   const [advisors] = useState([
-    { name: "Advisor 1", image: "/images/team/default.jpg" },
-    { name: "Advisor 2", image: "/images/team/default.jpg" },
-    { name: "Advisor 3", image: "/images/team/default.jpg" },
+    { name: "Sanchari Pandey", image: "/images/team/default.jpg" },
+    { name: "Avik Sen", image: "/images/team/default.jpg" },
+    { name: "SK Mohammad Afzal", image: "/images/team/default.jpg" },
     { name: "Advisor 4", image: "/images/team/default.jpg" },
     { name: "Advisor 5", image: "/images/team/default.jpg" },
     { name: "Advisor 6", image: "/images/team/default.jpg" }

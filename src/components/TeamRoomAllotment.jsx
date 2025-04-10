@@ -7,7 +7,7 @@ const TeamRoomAllotment = () => {
   const [eventDetails, setEventDetails] = useState({
     name: 'PULSE.exe 2K25',
     venue: 'IT Department',
-    date: 'April 23-24, 2025',
+    date: 'April 25-26, 2025',
     organizer: 'IT Department'
   });
   
@@ -105,6 +105,25 @@ const TeamRoomAllotment = () => {
             <div>
               <p className="text-gray-300"><span className="font-medium text-emerald-300">Venue:</span> {eventDetails.venue}</p>
               <p className="text-gray-300"><span className="font-medium text-emerald-300">Organizer:</span> {eventDetails.organizer}</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Warning Message */}
+        <motion.div 
+          variants={itemVariants}
+          className="mb-8 p-6 bg-yellow-500/10 rounded-lg border border-yellow-500/30 backdrop-blur-sm"
+        >
+          <div className="flex items-start space-x-3">
+            <svg className="w-6 h-6 text-yellow-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <div>
+              <h3 className="text-lg font-semibold text-yellow-400 mb-2">Important Notice</h3>
+              <p className="text-yellow-300/90">
+                The Team Room Allotment feature will only be available after the registration period closes. 
+                Please check back after April 12, 2025 to view your allotted room and other details.
+              </p>
             </div>
           </div>
         </motion.div>

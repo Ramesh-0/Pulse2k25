@@ -85,22 +85,22 @@ const Timeline = () => {
   const events = [
     {
       title: "Registration Opens",
-      date: "April 10, 2025",
+      date: "April 12, 2025",
       description: "Begin your journey by registering for PULSE.exe. Don't miss out on this opportunity to showcase your skills!"
     },
     {
       title: "First Round",
-      date: "April 23, 2025",
+      date: "April 25, 2025",
       description: "An Elimination Round to test your mettle. That contains Aptitude, Sudoku, Coding and much more exsiting Queestions."
     },
     {
       title: "Idea Submission",
-      date: "April 23, 2025",
+      date: "April 25, 2025",
       description: "Showcase your innovative thinking and creativity to the world."
     },
     {
       title: "Finale",
-      date: "April 24, 2025",
+      date: "April 26, 2025",
       description: "Build your prototype and hack the event. May the best team win!"
     }
   ];
