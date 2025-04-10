@@ -1,5 +1,20 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import defaultImage from '../images/team/default.jpg';
+import rameshImage from '../images/team/Ramesh.jpg';
+import arfaImage from '../images/team/Arfa.jpg';
+import aditiImage from '../images/team/Aditi.jpg';
+import snehaImage from '../images/team/Sneha.jpg';
+import manshiImage from '../images/team/Manshi.jpg';
+import sukanyaImage from '../images/team/Sukanya.jpg';
+import abhishekImage from '../images/team/Abhishek.jpg';
+import kaushaniImage from '../images/team/Kaushani.jpg';
+import sanjanaImage from '../images/team/sanjana.jpg';
+import tabrezImage from '../images/team/Tabrez.jpg';
+import mayukhImage from '../images/team/Mayukh.jpg';
+import sinchitaImage from '../images/team/sinchita.jpg';
+import sarthakImage from '../images/team/sarthak.jpg';
+import diyaImage from '../images/team/Diya.jpg';
 
 const TeamMember = ({ name, image, index, delay }) => {
   return (
@@ -45,36 +60,36 @@ const TeamMember = ({ name, image, index, delay }) => {
 
 const AboutUs = () => {
   const [coordinators] = useState([
-    { name: "Ramesh Kumar Singh", image: "src/images/team/Ramesh.jpg" },
-    { name: "Arfa Ahmed Ansari", image: "src/images/team/Arfa.jpg" }
+    { name: "Ramesh Kumar Singh", image: rameshImage },
+    { name: "Arfa Ahmed Ansari", image: arfaImage }
   ]);
 
   const [teamMembers] = useState([
-    { name: "Aditi Sharma", image: "src/images/team/Aditi.jpg" },
-    { name: "Sneha Jha", image: "src/images/team/Sneha.jpg" },
-    { name: "Manshi Ram", image: "src/images/team/Manshi.jpg" },
-    { name: "Sukanya Saha", image: "src/images/team/Sukanya.jpg" },
-    { name: "Ritika Barui", image: "src/images/team/default.jpg" },
-    { name: "Avinandan Chakroborty", image: "src/images/team/default.jpg" },
-    { name: "Ayan Kundu", image: "src/images/team/default.jpg" },
-    { name: "Ayush Paul", image: "src/images/team/default.jpg" },
-    { name: "Abhishek Chaurasiya", image: "src/images/team/Abhishek.jpg" },
-    { name: "Kaushani Chandra", image: "src/images/team/Kaushani.jpg" },
-    { name: "L.C Abhinash", image: "src/images/team/sanjana.jpg" },
-    { name: "Md Tabrez Hossain", image: "src/images/team/Tabrez.jpg" },
-    { name: "Mayukh Das", image: "src/images/team/Mayukh.jpg" },
-    { name: "Abhiroop Mukherjee", image: "src/images/team/sinchita.jpg" },
-    { name: "Swarnabha Rakshit", image: "src/images/team/sarthak.jpg" },
-    { name: "Diya Sarkar", image: "src/images/team/Diya.jpg" }
+    { name: "Aditi Sharma", image: aditiImage },
+    { name: "Sneha Jha", image: snehaImage },
+    { name: "Manshi Ram", image: manshiImage },
+    { name: "Sukanya Saha", image: sukanyaImage },
+    { name: "Ritika Barui", image: defaultImage },
+    { name: "Avinandan Chakroborty", image: defaultImage },
+    { name: "Ayan Kundu", image: defaultImage },
+    { name: "Ayush Paul", image: defaultImage },
+    { name: "Abhishek Chaurasiya", image: abhishekImage },
+    { name: "Kaushani Chandra", image: kaushaniImage },
+    { name: "L.C Abhinash", image: sanjanaImage },
+    { name: "Md Tabrez Hossain", image: tabrezImage },
+    { name: "Mayukh Das", image: mayukhImage },
+    { name: "Abhiroop Mukherjee", image: sinchitaImage },
+    { name: "Swarnabha Rakshit", image: sarthakImage },
+    { name: "Diya Sarkar", image: diyaImage }
   ]);
 
   const [advisors] = useState([
-    { name: "Sanchari Pandey", image: "/images/team/default.jpg" },
-    { name: "Avik Sen", image: "/images/team/default.jpg" },
-    { name: "SK Mohammad Afzal", image: "/images/team/default.jpg" },
-    { name: "Advisor 4", image: "/images/team/default.jpg" },
-    { name: "Advisor 5", image: "/images/team/default.jpg" },
-    { name: "Advisor 6", image: "/images/team/default.jpg" }
+    { name: "Sanchari Pandey", image: defaultImage },
+    { name: "Avik Sen", image: defaultImage },
+    { name: "SK Mohammad Afzal", image: defaultImage },
+    { name: "Advisor 4", image: defaultImage },
+    { name: "Advisor 5", image: defaultImage },
+    { name: "Advisor 6", image: defaultImage }
   ]);
 
   const [visibleTeamMembers, setVisibleTeamMembers] = useState([]);

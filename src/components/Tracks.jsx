@@ -1,4 +1,10 @@
 import { motion } from 'framer-motion';
+import advisorsImage from '../images/Advisors.jpg';
+import aptitudeImage from '../images/Aptitude.jpg';
+import codingImage from '../images/Coding.jpg';
+import inaugrationImage from '../images/inaugration.jpg';
+import organizingImage from '../images/Organizing.jpg';
+import participantsImage from '../images/Participants.jpg';
 
 const AboutEvent = () => {
   return (
@@ -104,27 +110,27 @@ const Gallery = () => {
   // Sample gallery images - replace with actual images
   const galleryImages = [
     {
-      src: "src/images/Advisors.jpg", 
+      src: advisorsImage, 
       alt: "Advisors"
     },
     {
-      src: "src/images/Aptitude.jpg", 
+      src: aptitudeImage, 
       alt: "Aptitude"
     },
     {
-      src: "src/images/Coding.jpg", 
+      src: codingImage, 
       alt: "Coding"
     },
     {
-      src: "src/images/Inaugration.jpg", 
+      src: inaugrationImage, 
       alt: "Inaugration"
     },
     {
-      src: "src/images/Organizing.jpg", 
+      src: organizingImage, 
       alt: "Organizing Team"
     },
     {
-      src: "src/images/Participants.jpg", 
+      src: participantsImage, 
       alt: "Participants"
     }
   ];

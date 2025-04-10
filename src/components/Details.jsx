@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import clglogo from '../images/clglogo.png';
+import calendarIcon from '../images/calendar-icon.svg';
 
 const Details = () => {
   const containerVariants = {
@@ -46,7 +48,7 @@ const Details = () => {
           className="flex justify-center mb-12"
         >
           <img
-            src="src/images/clglogo.png"
+            src={clglogo}
             alt="MCKVIE Logo"
             className="h-24 w-auto"
             onError={(e) => {
@@ -112,7 +114,7 @@ const Details = () => {
               {/* Date and Time */}
               <div className="text-center flex flex-col items-center">
                 <div className="w-24 h-24 mb-4">
-                  <img src="/images/calendar-icon.svg" alt="Calendar" className="w-full h-full" 
+                  <img src={calendarIcon} alt="Calendar" className="w-full h-full" 
                        onError={(e) => {e.target.src = 'https://img.icons8.com/pastel-glyph/64/22c55e/calendar--v1.png'}} />
                 </div>
                 <p className="text-xl font-semibold text-white mb-2">Thursday, 25-26 April, 2025</p>
