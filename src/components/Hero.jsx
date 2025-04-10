@@ -119,13 +119,13 @@ const Hero = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="min-h-screen pt-24 pb-16 relative bg-gradient-to-b from-[#040d09] to-[#071912] overflow-hidden"
+      className="min-h-screen pt-16 pb-8 relative bg-gradient-to-b from-[#040d09] to-[#071912] overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-500/5 rounded-full blur-3xl" />
       </div>
 
       {/* 3D Robot Model */}
@@ -143,107 +143,110 @@ const Hero = () => {
         animate="visible"
         className="container mx-auto px-4 relative lg:ml-[400px]"
       >
-        <motion.div variants={itemVariants} className="text-center mb-6">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
+        <motion.div variants={itemVariants} className="text-center mb-2">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-1">
+            <span className="bg-gradient-to-r from-orange-400 to-green-300 bg-clip-text text-transparent">
               PULSE.exe
             </span>
-            <span className="text-white">2k25</span>
+            <span className="text-white"> 2k25</span>
           </h1>
-          <p className="text-emerald-300 text-xl md:text-2xl font-medium">
+          <p className="text-orange-300 text-base md:text-lg font-medium">
             Code. Create. Innovate.
           </p>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="text-center mb-3">
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
-            A technical event by the IT Department of MCKVIE in collaboration with IIC MCKVIE Organised by
+        <motion.div variants={itemVariants} className="text-center mb-2">
+          <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
+            A technical event by the IT Department of MCKVIE in collaboration with IIC MCKVIE
           </p>
         </motion.div>
 
         {/* Logos Section */}
         <motion.div 
           variants={itemVariants} 
-          className="grid md:grid-cols-5 gap-0.5 md:gap-2 items-center justify-items-center mb-6 max-w-2xl mx-auto"
+          className="flex flex-col items-center justify-center mb-4 max-w-5xl mx-auto"
         >
-          {/* First row - 3 logos */}
-          <div className="md:hidden col-span-full grid grid-cols-3 gap-0.5 w-full place-items-center">
-            {logos.slice(0, 3).map((logo, index) => (
-              <motion.div
-                key={index}
-                className="relative group flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className={`relative z-10 filter brightness-100 hover:brightness-110 transition-all duration-300 ${
-                    logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] md:w-[100px] md:h-[60px]' :
-                    logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] md:w-[80px] md:h-[80px]' :
-                    logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] md:w-[75px] md:h-[75px]' :
-                    logo.alt === 'College Logo' ? 'w-[75px] h-[75px] md:w-[80px] md:h-[80px]' :
-                    'w-[130px] h-[130px] md:w-[75px] md:h-[75px]'
-                  }`}
-                  style={{
-                    filter: logo.alt === 'NBA Logo' ? 'brightness(200%)' : 'none'
-                  }}
-                />
-              </motion.div>
-            ))}
-          </div>
+          {/* Mobile view - two rows */}
+          <div className="md:hidden w-full">
+            {/* First row - 3 logos */}
+            <div className="flex justify-around gap-1 w-full">
+              {logos.slice(0, 3).map((logo, index) => (
+                <motion.div
+                  key={index}
+                  className="relative group flex items-center justify-center"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-green-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${
+                      logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] object-contain' :
+                      logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] object-contain' :
+                      logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] object-contain' :
+                      logo.alt === 'College Logo' ? 'w-[75px] h-[75px] object-contain' :
+                      'w-[130px] h-[130px] object-contain'
+                    }`}
+                    style={{
+                      filter: logo.alt === 'NBA Logo' ? 'brightness(250%)' : 'brightness(120%)'
+                    }}
+                  />
+                </motion.div>
+              ))}
+            </div>
 
-          {/* Second row - 2 logos */}
-          <div className="md:hidden col-span-full grid grid-cols-2 gap-0.5 w-full place-items-center mt-0.5">
-            {logos.slice(3).map((logo, index) => (
-              <motion.div
-                key={index + 3}
-                className="relative group flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className={`relative z-10 filter brightness-100 hover:brightness-110 transition-all duration-300 ${
-                    logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] md:w-[100px] md:h-[60px]' :
-                    logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] md:w-[80px] md:h-[80px]' :
-                    logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] md:w-[75px] md:h-[75px]' :
-                    logo.alt === 'College Logo' ? 'w-[75px] h-[75px] md:w-[80px] md:h-[80px]' :
-                    'w-[130px] h-[130px] md:w-[75px] md:h-[75px]'
-                  }`}
-                  style={{
-                    filter: logo.alt === 'NBA Logo' ? 'brightness(200%)' : 'none'
-                  }}
-                />
-              </motion.div>
-            ))}
+            {/* Second row - 2 logos */}
+            <div className="flex justify-center gap-6 w-full mt-1">
+              {logos.slice(3).map((logo, index) => (
+                <motion.div
+                  key={index + 3}
+                  className="relative group flex items-center justify-center"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-green-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${
+                      logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] object-contain' :
+                      logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] object-contain' :
+                      logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] object-contain' :
+                      logo.alt === 'College Logo' ? 'w-[75px] h-[75px] object-contain' :
+                      'w-[130px] h-[130px] object-contain'
+                    }`}
+                    style={{
+                      filter: logo.alt === 'NBA Logo' ? 'brightness(250%)' : 'brightness(120%)'
+                    }}
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
 
           {/* Desktop view - all logos in one row */}
-          <div className="hidden md:grid md:grid-cols-5 gap-2 w-full place-items-center">
+          <div className="hidden md:flex justify-center items-center w-full my-4">
             {logos.map((logo, index) => (
               <motion.div
                 key={index}
-                className="relative group flex items-center justify-center"
+                className="relative group flex items-center justify-center mx-0.5"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-green-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className={`relative z-10 filter brightness-100 hover:brightness-110 transition-all duration-300 ${
-                    logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] md:w-[100px] md:h-[60px]' :
-                    logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] md:w-[80px] md:h-[80px]' :
-                    logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] md:w-[75px] md:h-[75px]' :
-                    logo.alt === 'College Logo' ? 'w-[75px] h-[75px] md:w-[80px] md:h-[80px]' :
-                    'w-[130px] h-[130px] md:w-[75px] md:h-[75px]'
+                  className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${
+                    logo.alt === 'IIC Logo' ? 'w-[170px] h-[110px] object-contain' :
+                    logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] object-contain' :
+                    logo.alt === 'NAAC Logo' ? 'w-[120px] h-[120px] object-contain' :
+                    logo.alt === 'College Logo' ? 'w-[100px] h-[100px] object-contain' :
+                    'w-[120px] h-[120px] object-contain'
                   }`}
                   style={{
-                    filter: logo.alt === 'NBA Logo' ? 'brightness(200%)' : 'none'
+                    filter: logo.alt === 'NBA Logo' ? 'brightness(400%) contrast(120%)' : 'brightness(120%)'
                   }}
                 />
               </motion.div>
@@ -251,9 +254,9 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="mb-12">
-          <h2 className="text-center text-2xl font-bold text-white mb-8">Hacking Begins In</h2>
-          <div className="flex flex-wrap justify-center gap-4">
+        <motion.div variants={itemVariants} className="mb-6">
+          <h2 className="text-center text-xl font-bold text-white mb-4">Hacking Begins In</h2>
+          <div className="flex flex-wrap justify-center gap-2">
             <CountdownItem value={timeLeft.days} label="Days" />
             <CountdownItem value={timeLeft.hours} label="Hours" />
             <CountdownItem value={timeLeft.minutes} label="Minutes" />
@@ -261,15 +264,15 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="text-center space-y-4">
-          <p className="text-emerald-300 text-lg">April 25-26, 2025</p>
-          <p className="text-emerald-300 text-lg">MCKV Institute of Engineering, Liluah</p>
-          <div className="flex justify-center gap-4 mt-8">
+        <motion.div variants={itemVariants} className="text-center space-y-2">
+          <p className="text-orange-300 text-sm md:text-base">April 25-26, 2025</p>
+          <p className="text-orange-300 text-sm md:text-base">MCKV Institute of Engineering, Liluah</p>
+          <div className="flex justify-center gap-4 mt-4">
             <Link
               to="/register"
-              className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500
-                       px-8 py-3 rounded-lg text-white font-medium transition-all duration-300
-                       hover:shadow-[0_0_20px_rgba(52,211,153,0.3)] transform hover:-translate-y-0.5"
+              className="bg-gradient-to-r from-orange-500 to-green-600 hover:from-orange-400 hover:to-green-500
+                       px-6 py-2 rounded-lg text-white font-medium transition-all duration-300
+                       hover:shadow-[0_0_20px_rgba(255,165,0,0.3)] transform hover:-translate-y-0.5"
             >
               Register Now
             </Link>

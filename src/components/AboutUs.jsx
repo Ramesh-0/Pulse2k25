@@ -10,6 +10,7 @@ import abhishekImage from '../images/team/Abhishek.jpg';
 import kaushaniImage from '../images/team/Kaushani.jpg';
 import mayukhImage from '../images/team/Mayukh.jpg';
 import diyaImage from '../images/team/Diya.jpg';
+import ritikaImage from '../images/team/Ritika.jpg';
 
 const TeamMember = ({ name, image, index, delay }) => {
   return (
@@ -64,7 +65,7 @@ const AboutUs = () => {
     { name: "Sneha Jha", image: snehaImage },
     { name: "Manshi Ram", image: manshiImage },
     { name: "Sukanya Saha", image: sukanyaImage },
-    { name: "Ritika Barui", image: "https://ui-avatars.com/api/?name=Ritika+Barui&background=0D9488&color=fff&size=150" },
+    { name: "Ritika Barui", image: ritikaImage },
     { name: "Avinandan Chakroborty", image: "https://ui-avatars.com/api/?name=Avinandan+Chakroborty&background=0D9488&color=fff&size=150" },
     { name: "Ayan Kundu", image: "https://ui-avatars.com/api/?name=Ayan+Kundu&background=0D9488&color=fff&size=150" },
     { name: "Ayush Paul", image: "https://ui-avatars.com/api/?name=Ayush+Paul&background=0D9488&color=fff&size=150" },
