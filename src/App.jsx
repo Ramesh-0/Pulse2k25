@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Tracks from './components/Tracks';
 import Timeline from './components/Timeline';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TeamRoomAllotment from './components/TeamRoomAllotment';
 import Details from './components/Details';
@@ -42,6 +43,7 @@ function App() {
                 <Hero />
                 <Tracks />
                 <Timeline />
+                <Contact />
               </>
             } />
             <Route path="/room-allotment" element={<TeamRoomAllotment />} />

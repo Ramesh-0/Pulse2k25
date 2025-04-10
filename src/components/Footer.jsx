@@ -111,7 +111,7 @@ const Footer = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://instagram.com/pulse2k25"
+                      href="https://www.instagram.com/pulse.exe2k25?igsh=MWt5cWswYWV4cm51dg=="
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-[#071912] p-2 rounded-lg border border-emerald-900/30 hover:border-emerald-400/50 

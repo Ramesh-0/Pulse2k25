@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import logo from '../images/logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,11 +33,15 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-            <span className="bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
-              PULSE
-            </span>
-            <span className="text-white">2k25</span>
+          <Link to="/" className="text-2xl font-bold flex items-center">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-lg blur-lg group-hover:blur-xl transition-all duration-300" />
+              <img 
+                src={logo} 
+                alt="PULSE.exe Logo" 
+                className="h-12 w-auto relative z-10 group-hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
           </Link>
           
           {/* Mobile menu button */}
