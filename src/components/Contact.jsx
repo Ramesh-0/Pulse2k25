@@ -22,7 +22,7 @@ const ContactPerson = ({ name, phone }) => (
 
 const Contact = () => {
   const facultyContacts = [
-    { name: "Jayanti Mahato", phone: "+91 97325 26103" }
+    { name: "Prof. Jayanti Mahato", phone: "+91 97325 26103" }
   ];
 
   const studentContacts = [

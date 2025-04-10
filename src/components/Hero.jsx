@@ -2,6 +2,11 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Spline from '@splinetool/react-spline';
+import AICTE from '../images/AICTE.png';
+import NAAC from '../images/NAAC.png';
+import clgLogo from '../images/clglogo.png';
+import IIC from '../images/IIC.png';
+import NBA from '../images/NBA.png';
 
 const CountdownItem = ({ value, label }) => (
   <motion.div
@@ -103,10 +108,18 @@ const Hero = () => {
     }
   };
 
+  const logos = [
+    { src: AICTE, alt: 'AICTE Logo' },
+    { src: NAAC, alt: 'NAAC Logo' },
+    { src: clgLogo, alt: 'College Logo' },
+    { src: IIC, alt: 'IIC Logo' },
+    { src: NBA, alt: 'NBA Logo' }
+  ];
+
   return (
     <section 
       ref={sectionRef} 
-      className="min-h-screen pt-8 pb-16 relative bg-gradient-to-b from-[#040d09] to-[#071912] overflow-hidden"
+      className="min-h-screen pt-24 pb-16 relative bg-gradient-to-b from-[#040d09] to-[#071912] overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0">
@@ -130,7 +143,7 @@ const Hero = () => {
         animate="visible"
         className="container mx-auto px-4 relative lg:ml-[400px]"
       >
-        <motion.div variants={itemVariants} className="text-center mb-8">
+        <motion.div variants={itemVariants} className="text-center mb-6">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
             <span className="bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
               PULSE.exe
@@ -142,10 +155,100 @@ const Hero = () => {
           </p>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="text-center mb-12">
+        <motion.div variants={itemVariants} className="text-center mb-3">
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
-          A technical event by the IT Department of MCKVIE.
+            A technical event by the IT Department of MCKVIE in collaboration with IIC MCKVIE Organised by
           </p>
+        </motion.div>
+
+        {/* Logos Section */}
+        <motion.div 
+          variants={itemVariants} 
+          className="grid md:grid-cols-5 gap-1 md:gap-2 items-center justify-items-center mb-6 max-w-2xl mx-auto"
+        >
+          {/* First row - 3 logos */}
+          <div className="md:hidden col-span-full grid grid-cols-3 gap-1 w-full place-items-center">
+            {logos.slice(0, 3).map((logo, index) => (
+              <motion.div
+                key={index}
+                className="relative group flex items-center justify-center"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className={`relative z-10 filter brightness-100 hover:brightness-110 transition-all duration-300 ${
+                    logo.alt === 'IIC Logo' ? 'w-[70px] h-[45px] md:w-[100px] md:h-[60px]' :
+                    logo.alt === 'AICTE Logo' ? 'w-[60px] h-[60px] md:w-[80px] md:h-[80px]' :
+                    logo.alt === 'NAAC Logo' ? 'w-[55px] h-[55px] md:w-[75px] md:h-[75px]' :
+                    logo.alt === 'College Logo' ? 'w-[60px] h-[60px] md:w-[80px] md:h-[80px]' :
+                    'w-[55px] h-[55px] md:w-[75px] md:h-[75px]'
+                  }`}
+                  style={{
+                    filter: logo.alt === 'NBA Logo' ? 'brightness(200%)' : 'none'
+                  }}
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Second row - 2 logos */}
+          <div className="md:hidden col-span-full grid grid-cols-2 gap-1 w-full place-items-center mt-1">
+            {logos.slice(3).map((logo, index) => (
+              <motion.div
+                key={index + 3}
+                className="relative group flex items-center justify-center"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className={`relative z-10 filter brightness-100 hover:brightness-110 transition-all duration-300 ${
+                    logo.alt === 'IIC Logo' ? 'w-[70px] h-[45px] md:w-[100px] md:h-[60px]' :
+                    logo.alt === 'AICTE Logo' ? 'w-[60px] h-[60px] md:w-[80px] md:h-[80px]' :
+                    logo.alt === 'NAAC Logo' ? 'w-[55px] h-[55px] md:w-[75px] md:h-[75px]' :
+                    logo.alt === 'College Logo' ? 'w-[60px] h-[60px] md:w-[80px] md:h-[80px]' :
+                    'w-[55px] h-[55px] md:w-[75px] md:h-[75px]'
+                  }`}
+                  style={{
+                    filter: logo.alt === 'NBA Logo' ? 'brightness(200%)' : 'none'
+                  }}
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Desktop view - all logos in one row */}
+          <div className="hidden md:grid md:grid-cols-5 gap-2 w-full place-items-center">
+            {logos.map((logo, index) => (
+              <motion.div
+                key={index}
+                className="relative group flex items-center justify-center"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className={`relative z-10 filter brightness-100 hover:brightness-110 transition-all duration-300 ${
+                    logo.alt === 'IIC Logo' ? 'w-[70px] h-[45px] md:w-[100px] md:h-[60px]' :
+                    logo.alt === 'AICTE Logo' ? 'w-[60px] h-[60px] md:w-[80px] md:h-[80px]' :
+                    logo.alt === 'NAAC Logo' ? 'w-[55px] h-[55px] md:w-[75px] md:h-[75px]' :
+                    logo.alt === 'College Logo' ? 'w-[60px] h-[60px] md:w-[80px] md:h-[80px]' :
+                    'w-[55px] h-[55px] md:w-[75px] md:h-[75px]'
+                  }`}
+                  style={{
+                    filter: logo.alt === 'NBA Logo' ? 'brightness(200%)' : 'none'
+                  }}
+                />
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div variants={itemVariants} className="mb-12">
