@@ -8,7 +8,6 @@ import manshiImage from '../images/team/Manshi.jpg';
 import sukanyaImage from '../images/team/Sukanya.jpg';
 import abhishekImage from '../images/team/Abhishek.jpg';
 import kaushaniImage from '../images/team/Kaushani.jpg';
-import tabrezImage from '../images/team/Tabrez.jpg';
 import mayukhImage from '../images/team/Mayukh.jpg';
 import diyaImage from '../images/team/Diya.jpg';
 
@@ -72,7 +71,7 @@ const AboutUs = () => {
     { name: "Abhishek Chaurasiya", image: abhishekImage },
     { name: "Kaushani Chandra", image: kaushaniImage },
     { name: "L.C Abhinash", image: "https://ui-avatars.com/api/?name=L.C+Abhinash&background=0D9488&color=fff&size=150" },
-    { name: "Md Tabrez Hossain", image: tabrezImage },
+    { name: "Md Tabrez Hossain", image: "https://ui-avatars.com/api/?name=Md+Tabrez+Hossain&background=0D9488&color=fff&size=150" },
     { name: "Mayukh Das", image: mayukhImage },
     { name: "Abhiroop Mukherjee", image: "https://ui-avatars.com/api/?name=Abhiroop+Mukherjee&background=0D9488&color=fff&size=150" },
     { name: "Swarnabha Rakshit", image: "https://ui-avatars.com/api/?name=Swarnabha+Rakshit&background=0D9488&color=fff&size=150" },
