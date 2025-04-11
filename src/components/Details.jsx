@@ -166,9 +166,9 @@ const Details = () => {
             <div className="space-y-6 text-center">
               <p className="text-gray-300 text-lg">
                 Register through the Google Form link provided or click on&nbsp;
-                <Link to="/register" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                <a href="https://forms.gle/AmxhQUjx3jMp6PUe6" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors">
                   Register here
-                </Link>.
+                </a>.
               </p>
               
               <p className="text-gray-300 text-lg">
@@ -193,9 +193,10 @@ const Details = () => {
           className="text-center"
         >
           <Link 
-            to="/register" 
+            to="https://forms.gle/AmxhQUjx3jMp6PUe6"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500
-                     px-8 py-3 rounded-lg text-white font-medium text-lg transition-all duration-300
                      hover:shadow-[0_0_20px_rgba(52,211,153,0.3)] transform hover:-translate-y-0.5"
           >
             Register Now

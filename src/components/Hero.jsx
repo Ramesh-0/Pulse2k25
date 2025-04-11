@@ -269,7 +269,9 @@ const Hero = () => {
           <p className="text-orange-300 text-sm md:text-base">MCKV Institute of Engineering, Liluah</p>
           <div className="flex justify-center gap-4 mt-4">
             <Link
-              to="/register"
+              to="https://forms.gle/AmxhQUjx3jMp6PUe6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gradient-to-r from-orange-500 to-green-600 hover:from-orange-400 hover:to-green-500
                        px-6 py-2 rounded-lg text-white font-medium transition-all duration-300
                        hover:shadow-[0_0_20px_rgba(255,165,0,0.3)] transform hover:-translate-y-0.5"

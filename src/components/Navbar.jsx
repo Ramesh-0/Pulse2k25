@@ -88,8 +88,9 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center space-x-4">
             <Link 
-              to="/register" 
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              to="https://forms.gle/AmxhQUjx3jMp6PUe6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500
                          px-4 py-2 rounded-lg text-white font-medium transition-all duration-300
                          hover:shadow-[0_0_20px_rgba(52,211,153,0.3)] transform hover:-translate-y-0.5"
@@ -119,7 +120,9 @@ const Navbar = () => {
               <MobileNavLink to="/faq" setIsMenuOpen={setIsMenuOpen}>FAQ</MobileNavLink>
               <div className="pt-4 border-t border-emerald-900/30">
                 <Link 
-                  to="/register" 
+                  to="https://forms.gle/AmxhQUjx3jMp6PUe6"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                     setIsMenuOpen(false);
