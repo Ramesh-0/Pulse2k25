@@ -11,12 +11,14 @@ import kaushaniImage from '../images/team/Kaushani.jpg';
 import mayukhImage from '../images/team/Mayukh.jpg';
 import diyaImage from '../images/team/Diya.jpg';
 import ritikaImage from '../images/team/Ritika.jpg';
-import SanchariPandey from '../images/advisors/Sanchari Pandey.jpg';
-import AvikSen from '../images/advisors/Avik Sen.jpeg';
-import SkMahammadAfzal from '../images/advisors/SK Mahammad Afzal.jpg';
-import DiptiBhowmik from '../images/advisors/Dipti Bhowmik.jpeg';
-import SreyaDhar from '../images/advisors/Sreya Dhar.jpg';
-import ArupMaity from '../images/advisors/Arup Maity.jpeg';
+import SanchariPandey from '../images/advisors/sanchari_pandey.jpg';
+import AvikSen from '../images/advisors/avik_sen.jpeg';
+import SkMahammadAfzal from '../images/advisors/sk_mahammad_afzal.jpg';
+import DiptiBhowmik from '../images/advisors/dipti_bhowmik.jpeg';
+import SreyaDhar from '../images/advisors/sreya_dhar.jpg';
+import ArupMaity from '../images/advisors/arup_maity.jpeg';
+import tabrezImage from '../images/team/Tabrez.jpg';
+import abhiroopImage from '../images/team/Abhiroop.jpg';
 
 const TeamMember = ({ name, image, index, delay }) => {
   return (
@@ -78,9 +80,9 @@ const AboutUs = () => {
     { name: "Abhishek Chaurasiya", image: abhishekImage },
     { name: "Kaushani Chandra", image: kaushaniImage },
     { name: "L.C Abhinash", image: "https://ui-avatars.com/api/?name=L.C+Abhinash&background=0D9488&color=fff&size=150" },
-    { name: "Md Tabrez Hossain", image: "https://ui-avatars.com/api/?name=Md+Tabrez+Hossain&background=0D9488&color=fff&size=150" },
+    { name: "Md Tabrez Hossain", image: tabrezImage },
     { name: "Mayukh Das", image: mayukhImage },
-    { name: "Abhiroop Mukherjee", image: "https://ui-avatars.com/api/?name=Abhiroop+Mukherjee&background=0D9488&color=fff&size=150" },
+    { name: "Abhiroop Mukherjee", image: abhiroopImage },
     { name: "Swarnabha Rakshit", image: "https://ui-avatars.com/api/?name=Swarnabha+Rakshit&background=0D9488&color=fff&size=150" },
     { name: "Diya Sarkar", image: diyaImage }
   ]);
