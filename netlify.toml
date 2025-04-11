@@ -12,7 +12,27 @@
   status = 200
   force = true
 
-[[headers]]
+[[redirects]]
+  from = "/about"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/details"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/faq"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/room-allotment"
+  to = "/index.html"
+  status = 200
+
+[headers]
   for = "/*"
-    [headers.values]
+  [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate" 
