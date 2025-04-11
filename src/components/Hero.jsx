@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { color, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Spline from '@splinetool/react-spline';
 import AICTE from '../images/AICTE.png';
@@ -31,7 +31,7 @@ const Hero = () => {
     minutes: 0,
     seconds: 0
   });
-  
+
   const splineRef = useRef();
   const sectionRef = useRef();
 
@@ -46,7 +46,7 @@ const Hero = () => {
         // Get mouse coordinates
         const x = event.clientX;
         const y = event.clientY;
-        
+
         // Emit event to Spline with mouse position
         splineRef.current.emitEvent('mousemove', { x, y });
       }
@@ -117,8 +117,8 @@ const Hero = () => {
   ];
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       className="min-h-screen pt-16 pb-8 relative bg-gradient-to-b from-[#040d09] to-[#071912] overflow-hidden"
     >
       {/* Background decorative elements */}
@@ -141,29 +141,33 @@ const Hero = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="container mx-auto px-4 relative lg:ml-[400px]"
+        className="container mx-auto mt-11 px-4 relative lg:ml-[400px]"
       >
         <motion.div variants={itemVariants} className="text-center mb-2">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-1">
-            <span className="bg-gradient-to-r from-orange-400 to-green-300 bg-clip-text text-transparent">
-              PULSE.exe
+            <span style={{ color: "#f79622" }} className="from-orange-400 to-green-300">
+              PULSE
             </span>
-            <span className="text-white"> 2k25</span>
+            <span>.</span>
+            <span style={{ color: "#1aa89e" }}>
+              EXE
+            </span>
+            <span className="text-white"> 2K25</span>
           </h1>
           <p className="text-orange-300 text-base md:text-lg font-medium">
             Code. Create. Innovate.
           </p>
         </motion.div>
-
-        <motion.div variants={itemVariants} className="text-center mb-2">
-          <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
-            A technical event by the IT Department of MCKVIE in collaboration with IIC MCKVIE
-          </p>
-        </motion.div>
-
+        <div className="w-full px-4">
+          <motion.div variants={itemVariants} className="text-center mb-2">
+            <p className="text-gray-400 text-sm md:text-base max-w-lg lg:max-w-md xl:max-w-sm mx-auto break-words leading-relaxed">
+              A technical event organized by the IT Department of MCKVIE in collaboration with IIC MCKVIE
+            </p>
+          </motion.div>
+        </div>
         {/* Logos Section */}
-        <motion.div 
-          variants={itemVariants} 
+        <motion.div
+          variants={itemVariants}
           className="flex flex-col items-center justify-center mb-4 max-w-5xl mx-auto"
         >
           {/* Mobile view - two rows */}
@@ -181,13 +185,12 @@ const Hero = () => {
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${
-                      logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] object-contain' :
-                      logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] object-contain' :
-                      logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] object-contain' :
-                      logo.alt === 'College Logo' ? 'w-[75px] h-[75px] object-contain' :
-                      'w-[130px] h-[130px] object-contain'
-                    }`}
+                    className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] object-contain' :
+                        logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] object-contain' :
+                          logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] object-contain' :
+                            logo.alt === 'College Logo' ? 'w-[75px] h-[75px] object-contain' :
+                              'w-[130px] h-[130px] object-contain'
+                      }`}
                     style={{
                       filter: logo.alt === 'NBA Logo' ? 'brightness(250%)' : 'brightness(120%)'
                     }}
@@ -209,13 +212,12 @@ const Hero = () => {
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${
-                      logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] object-contain' :
-                      logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] object-contain' :
-                      logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] object-contain' :
-                      logo.alt === 'College Logo' ? 'w-[75px] h-[75px] object-contain' :
-                      'w-[130px] h-[130px] object-contain'
-                    }`}
+                    className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] object-contain' :
+                        logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] object-contain' :
+                          logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] object-contain' :
+                            logo.alt === 'College Logo' ? 'w-[75px] h-[75px] object-contain' :
+                              'w-[130px] h-[130px] object-contain'
+                      }`}
                     style={{
                       filter: logo.alt === 'NBA Logo' ? 'brightness(250%)' : 'brightness(120%)'
                     }}
@@ -226,25 +228,24 @@ const Hero = () => {
           </div>
 
           {/* Desktop view - all logos in one row */}
-          <div className="hidden md:flex justify-center items-center w-full my-4">
+          <div className="hidden md:flex sm:flex justify-center items-center w-full my-4">
             {logos.map((logo, index) => (
               <motion.div
                 key={index}
-                className="relative group flex items-center justify-center mx-0.5"
+                className="reltive group flex items-center justify-center mx-0.5"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-green-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="  absolute inset-0 bg-gradient-to-r from-orange-500/20 to-green-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${
-                    logo.alt === 'IIC Logo' ? 'w-[170px] h-[110px] object-contain' :
-                    logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] object-contain' :
-                    logo.alt === 'NAAC Logo' ? 'w-[120px] h-[120px] object-contain' :
-                    logo.alt === 'College Logo' ? 'w-[100px] h-[100px] object-contain' :
-                    'w-[120px] h-[120px] object-contain'
-                  }`}
+                  className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${logo.alt === 'IIC Logo' ? 'w-[130px] h-[130px] object-contain' :
+                      logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] object-contain' :
+                        logo.alt === 'NAAC Logo' ? 'w-[140px] h-[140px] object-contain' :
+                          logo.alt === 'College Logo' ? 'w-[90px] h-[80px] object-contain' :
+                            'w-[130px] h-[130px] object-contain'
+                    }`}
                   style={{
                     filter: logo.alt === 'NBA Logo' ? 'brightness(400%) contrast(120%)' : 'brightness(120%)'
                   }}
@@ -265,8 +266,8 @@ const Hero = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="text-center space-y-2">
-          <p className="text-orange-300 text-sm md:text-base">April 25-26, 2025</p>
-          <p className="text-orange-300 text-sm md:text-base">MCKV Institute of Engineering, Liluah</p>
+          <p className="text-emerald-300 text-sm md:text-base">April 25-26, 2025</p>
+          <p className="text-emerald-300 text-sm md:text-base">MCKV Institute of Engineering, Liluah</p>
           <div className="flex justify-center gap-4 mt-4">
             <Link
               to="https://forms.gle/AmxhQUjx3jMp6PUe6"
