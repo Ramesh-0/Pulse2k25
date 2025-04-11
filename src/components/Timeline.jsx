@@ -89,12 +89,12 @@ const Timeline = () => {
       description: "Begin your journey by registering for PULSE.exe. Don't miss out on this opportunity to showcase your skills!"
     },
     {
-      title: "First Round",
-      date: "April 25, 2025",
+      title: "Crack Track",
+      date: "April 25, 2025, from 9:30 AM",
       description: "An Elimination Round to test your mettle. That contains Aptitude, Sudoku, Coding and much more exsiting Queestions."
     },
     {
-      title: "Idea Submission",
+      title: "Neuro Hack",
       date: "April 25, 2025",
       description: "Showcase your innovative thinking and creativity to the world."
     },

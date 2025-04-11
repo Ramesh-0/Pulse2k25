@@ -14,13 +14,13 @@ const CountdownItem = ({ value, label }) => (
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
     className="bg-[#071912] rounded-xl p-4 border border-emerald-900/30 backdrop-blur-sm
-               hover:border-emerald-400/50 transition-all duration-300 w-full md:w-32
+               hover:border-emerald-400/50 transition-all duration-300 w-24 sm:w-28 md:w-32
                hover:shadow-[0_0_25px_rgba(52,211,153,0.15)]"
   >
-    <div className="text-3xl md:text-4xl font-bold bg-gradient-to-b from-white to-emerald-200 bg-clip-text text-transparent">
+    <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-b from-white to-emerald-200 bg-clip-text text-transparent">
       {String(value).padStart(2, '0')}
     </div>
-    <div className="text-emerald-400 text-sm font-medium">{label}</div>
+    <div className="text-emerald-400 text-xs sm:text-sm font-medium">{label}</div>
   </motion.div>
 );
 
@@ -256,7 +256,7 @@ const Hero = () => {
 
         <motion.div variants={itemVariants} className="mb-6">
           <h2 className="text-center text-xl font-bold text-white mb-4">Hacking Begins In</h2>
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-row justify-center gap-2">
             <CountdownItem value={timeLeft.days} label="Days" />
             <CountdownItem value={timeLeft.hours} label="Hours" />
             <CountdownItem value={timeLeft.minutes} label="Minutes" />
