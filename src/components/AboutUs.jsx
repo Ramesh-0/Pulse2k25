@@ -17,7 +17,7 @@ import SkMahammadAfzal from '../images/advisors/sk_mahammad_afzal.jpg';
 import DiptiBhowmik from '../images/advisors/dipti_bhowmik.jpeg';
 import SreyaDhar from '../images/advisors/sreya_dhar.jpg';
 import ArupMaity from '../images/advisors/arup_maity.jpeg';
-import tabrezImage from '../images/team/Tabrez.jpg';
+import tabrezImage from '/images/team/Tabrez.jpg';
 import abhiroopImage from '../images/team/Abhiroop.jpg';
 
 const TeamMember = ({ name, image, index, delay }) => {
