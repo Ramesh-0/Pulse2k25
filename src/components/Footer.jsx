@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
+
 const FooterSection = ({ title, children }) => (
   <div className="relative">
     <h4 className="text-lg font-semibold mb-4 bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
@@ -50,8 +57,8 @@ const Footer = () => {
           viewport={{ once: true }}
           className="container mx-auto px-4 py-16"
         >
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            <motion.div variants={itemVariants}>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12">
+            <motion.div variants={itemVariants} className="mb-8 md:mb-0">
               <Link to="/" className="inline-block mb-6">
                 <h3 className="text-2xl font-bold">
                   <span className="bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
@@ -61,27 +68,24 @@ const Footer = () => {
                 </h3>
               </Link>
               <p className="text-emerald-100/70 leading-relaxed">
-              Pulse.exe, is the annual technical event organized by the IT Department of MCKV Institute of Engineering, is set to deliver an exceptional experience for students looking to prove their mettle in the fields of critical thinking, vigilance, and curiosity.
+                Pulse.exe, is the annual technical event organized by the IT Department of MCKV Institute of Engineering, is set to deliver an exceptional experience for students looking to prove their mettle in the fields of critical thinking, vigilance, and curiosity.
               </p>
             </motion.div>
 
-            <motion.div variants={itemVariants}>
+            <motion.div variants={itemVariants} className="mb-8 md:mb-0">
               <FooterSection title="Quick Links">
-                <ul className="space-y-3 text-emerald-100/70">
+                <ul className="space-y-2 text-emerald-100/70">
                   <li>
-                    <Link to="/" className="hover:text-emerald-300 transition-colors">Home</Link>
+                    <Link to="/" onClick={scrollToTop} className="hover:text-emerald-300 transition-colors block py-2">Home</Link>
                   </li>
                   <li>
-                    <Link to="/details" className="hover:text-emerald-300 transition-colors">Details</Link>
+                    <Link to="/details" onClick={scrollToTop} className="hover:text-emerald-300 transition-colors block py-2">Details</Link>
                   </li>
                   <li>
-                    <Link to="/about" className="hover:text-emerald-300 transition-colors">About Us</Link>
+                    <Link to="/about" onClick={scrollToTop} className="hover:text-emerald-300 transition-colors block py-2">About Us</Link>
                   </li>
                   <li>
-                    <Link to="/sponsors" className="hover:text-emerald-300 transition-colors">Sponsors</Link>
-                  </li>
-                  <li>
-                    <Link to="/faq" className="hover:text-emerald-300 transition-colors">FAQ</Link>
+                    <Link to="/faq" onClick={scrollToTop} className="hover:text-emerald-300 transition-colors block py-2">FAQ</Link>
                   </li>
                 </ul>
               </FooterSection>
