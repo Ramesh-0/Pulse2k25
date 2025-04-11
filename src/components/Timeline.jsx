@@ -95,7 +95,7 @@ const Timeline = () => {
     },
     {
       title: "Neuro Hack",
-      date: "April 25, 2025",
+      date: "April 25, 2025, from 12:30 PM",
       description: "Showcase your innovative thinking and creativity to the world."
     },
     {

@@ -11,6 +11,7 @@ import kaushaniImage from '../images/team/Kaushani.jpg';
 import mayukhImage from '../images/team/Mayukh.jpg';
 import diyaImage from '../images/team/Diya.jpg';
 import ritikaImage from '../images/team/Ritika.jpg';
+import afzalImage from '../images/team/Afzal.jpg';
 
 const TeamMember = ({ name, image, index, delay }) => {
   return (
@@ -82,10 +83,10 @@ const AboutUs = () => {
   const [advisors] = useState([
     { name: "Sanchari Pandey", image: "https://ui-avatars.com/api/?name=Sanchari+Pandey&background=0D9488&color=fff&size=150" },
     { name: "Avik Sen", image: "https://ui-avatars.com/api/?name=Avik+Sen&background=0D9488&color=fff&size=150" },
-    { name: "SK Mohammad Afzal", image: "https://ui-avatars.com/api/?name=SK+Mohammad+Afzal&background=0D9488&color=fff&size=150" },
-    { name: "Advisor 4", image: "https://ui-avatars.com/api/?name=Advisor+4&background=0D9488&color=fff&size=150" },
-    { name: "Advisor 5", image: "https://ui-avatars.com/api/?name=Advisor+5&background=0D9488&color=fff&size=150" },
-    { name: "Advisor 6", image: "https://ui-avatars.com/api/?name=Advisor+6&background=0D9488&color=fff&size=150" }
+    { name: "SK Mohammad Afzal", image: afzalImage },
+    { name: "Dipti Bhowmik", image: "https://ui-avatars.com/api/?name=Advisor+4&background=0D9488&color=fff&size=150" },
+    { name: "Sreya Dhar", image: "https://ui-avatars.com/api/?name=Advisor+5&background=0D9488&color=fff&size=150" },
+    { name: "Arup Maity", image: "https://ui-avatars.com/api/?name=Advisor+6&background=0D9488&color=fff&size=150" }
   ]);
 
   const [visibleTeamMembers, setVisibleTeamMembers] = useState([]);
