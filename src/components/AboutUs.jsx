@@ -83,9 +83,9 @@ const AboutUs = () => {
     { name: "Sanchari Pandey", image: "https://ui-avatars.com/api/?name=Sanchari+Pandey&background=0D9488&color=fff&size=150" },
     { name: "Avik Sen", image: "https://ui-avatars.com/api/?name=Avik+Sen&background=0D9488&color=fff&size=150" },
     { name: "SK Mohammad Afzal", image: "https://ui-avatars.com/api/?name=SK+Mohammad+Afzal&background=0D9488&color=fff&size=150" },
-    { name: "Dipti Bhowmik", image: "https://ui-avatars.com/api/?name=Advisor+4&background=0D9488&color=fff&size=150" },
-    { name: "Sreya Dhar", image: "https://ui-avatars.com/api/?name=Advisor+5&background=0D9488&color=fff&size=150" },
-    { name: "Arup Maity", image: "https://ui-avatars.com/api/?name=Advisor+6&background=0D9488&color=fff&size=150" }
+    { name: "Dipti Bhowmik", image: "https://ui-avatars.com/api/?name=Dipti+Bhowmik&background=0D9488&color=fff&size=150" },
+    { name: "Sreya Dhar", image: "https://ui-avatars.com/api/?name=Sreya+Dhar&background=0D9488&color=fff&size=150" },
+    { name: "Arup Maity", image: "https://ui-avatars.com/api/?name=Arup+Maity&background=0D9488&color=fff&size=150" }
   ]);
 
   const [visibleTeamMembers, setVisibleTeamMembers] = useState([]);
@@ -247,7 +247,7 @@ const AboutUs = () => {
           </motion.h2>
           
           <div className="grid grid-cols-3 justify-items-center gap-4 sm:gap-8 md:gap-12 mx-auto max-w-2xl">
-            {advisors.slice(0, 3).map((advisor, index) => (
+            {advisors.map((advisor, index) => (
               <TeamMember 
                 key={advisor.name} 
                 name={advisor.name} 
