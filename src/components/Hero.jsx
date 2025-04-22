@@ -7,6 +7,9 @@ import NAAC from '../images/NAAC.png';
 import clgLogo from '../images/clglogo.png';
 import IIC from '../images/IIC.png';
 import NBA from '../images/NBA.png';
+import Euphoria from '../images/Euphoria.png';
+import SPO from '../images/SPO.png';
+import IICMCKVIE from '../images/IICMCKVIE.png';
 
 const CountdownItem = ({ value, label }) => (
   <motion.div
@@ -113,7 +116,10 @@ const Hero = () => {
     { src: NAAC, alt: 'NAAC Logo' },
     { src: clgLogo, alt: 'College Logo' },
     { src: IIC, alt: 'IIC Logo' },
-    { src: NBA, alt: 'NBA Logo' }
+    { src: NBA, alt: 'NBA Logo' },
+    { src: Euphoria, alt: 'Euphoria Logo' },
+    { src: SPO, alt: 'SPO Logo' },
+    { src: IICMCKVIE, alt: 'IICMCKVIE Logo' }
   ];
 
   return (
@@ -170,11 +176,11 @@ const Hero = () => {
           variants={itemVariants}
           className="flex flex-col items-center justify-center mb-4 max-w-5xl mx-auto"
         >
-          {/* Mobile view - two rows */}
+          {/* Mobile view - two balanced rows */}
           <div className="md:hidden w-full">
-            {/* First row - 3 logos */}
-            <div className="flex justify-around gap-1 w-full">
-              {logos.slice(0, 3).map((logo, index) => (
+            {/* First row - 4 logos */}
+            <div className="flex justify-center gap-4 w-full mb-4">
+              {logos.slice(0, 4).map((logo, index) => (
                 <motion.div
                   key={index}
                   className="relative group flex items-center justify-center"
@@ -185,12 +191,16 @@ const Hero = () => {
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] object-contain' :
-                        logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] object-contain' :
-                          logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] object-contain' :
-                            logo.alt === 'College Logo' ? 'w-[75px] h-[75px] object-contain' :
-                              'w-[130px] h-[130px] object-contain'
-                      }`}
+                    className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${
+                      logo.alt === 'IIC Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      logo.alt === 'AICTE Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      logo.alt === 'NAAC Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      logo.alt === 'College Logo' ? 'w-[60px] h-[60px] object-contain' :
+                      logo.alt === 'Euphoria Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      logo.alt === 'SPO Logo' ? 'w-[65px] h-[65px] object-contain' :
+                      logo.alt === 'IICMCKVIE Logo' ? 'w-[65px] h-[65px] object-contain' :
+                      'w-[100px] h-[100px] object-contain'
+                    }`}
                     style={{
                       filter: logo.alt === 'NBA Logo' ? 'brightness(250%)' : 'brightness(120%)'
                     }}
@@ -199,11 +209,11 @@ const Hero = () => {
               ))}
             </div>
 
-            {/* Second row - 2 logos */}
-            <div className="flex justify-center gap-6 w-full mt-1">
-              {logos.slice(3).map((logo, index) => (
+            {/* Second row - 4 logos */}
+            <div className="flex justify-center gap-4 w-full">
+              {logos.slice(4).map((logo, index) => (
                 <motion.div
-                  key={index + 3}
+                  key={index + 4}
                   className="relative group flex items-center justify-center"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
@@ -212,12 +222,16 @@ const Hero = () => {
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${logo.alt === 'IIC Logo' ? 'w-[200px] h-[130px] object-contain' :
-                        logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] object-contain' :
-                          logo.alt === 'NAAC Logo' ? 'w-[130px] h-[130px] object-contain' :
-                            logo.alt === 'College Logo' ? 'w-[75px] h-[75px] object-contain' :
-                              'w-[130px] h-[130px] object-contain'
-                      }`}
+                    className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${
+                      logo.alt === 'IIC Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      logo.alt === 'AICTE Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      logo.alt === 'NAAC Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      logo.alt === 'College Logo' ? 'w-[60px] h-[60px] object-contain' :
+                      logo.alt === 'Euphoria Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      logo.alt === 'SPO Logo' ? 'w-[65px] h-[65px] object-contain' :
+                      logo.alt === 'IICMCKVIE Logo' ? 'w-[65px] h-[65px] object-contain' :
+                      'w-[100px] h-[100px] object-contain'
+                    }`}
                     style={{
                       filter: logo.alt === 'NBA Logo' ? 'brightness(250%)' : 'brightness(120%)'
                     }}
@@ -227,31 +241,69 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Desktop view - all logos in one row */}
-          <div className="hidden md:flex sm:flex justify-center items-center w-full my-4">
-            {logos.map((logo, index) => (
-              <motion.div
-                key={index}
-                className="reltive group flex items-center justify-center mx-0.5"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="  absolute inset-0 bg-gradient-to-r from-orange-500/20 to-green-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${logo.alt === 'IIC Logo' ? 'w-[130px] h-[130px] object-contain' :
-                      logo.alt === 'AICTE Logo' ? 'w-[130px] h-[130px] object-contain' :
-                        logo.alt === 'NAAC Logo' ? 'w-[140px] h-[140px] object-contain' :
-                          logo.alt === 'College Logo' ? 'w-[90px] h-[80px] object-contain' :
-                            'w-[130px] h-[130px] object-contain'
+          {/* Desktop view - two rows */}
+          <div className="hidden md:flex md:flex-col items-center w-full my-4">
+            {/* First row */}
+            <div className="flex justify-center items-center gap-8 mb-6">
+              {logos.slice(0, 4).map((logo, index) => (
+                <motion.div
+                  key={index}
+                  className="relative group flex items-center justify-center"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-green-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${
+                      logo.alt === 'IIC Logo' ? 'w-[150px] h-[150px] object-contain' :
+                      logo.alt === 'AICTE Logo' ? 'w-[150px] h-[150px] object-contain' :
+                      logo.alt === 'NAAC Logo' ? 'w-[150px] h-[150px] object-contain' :
+                      logo.alt === 'College Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      logo.alt === 'Euphoria Logo' ? 'w-[150px] h-[150px] object-contain' :
+                      logo.alt === 'SPO Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      logo.alt === 'IICMCKVIE Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      'w-[150px] h-[150px] object-contain'
                     }`}
-                  style={{
-                    filter: logo.alt === 'NBA Logo' ? 'brightness(400%) contrast(120%)' : 'brightness(120%)'
-                  }}
-                />
-              </motion.div>
-            ))}
+                    style={{
+                      filter: logo.alt === 'NBA Logo' ? 'brightness(400%) contrast(120%)' : 'brightness(120%)'
+                    }}
+                  />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Second row */}
+            <div className="flex justify-center items-center gap-8">
+              {logos.slice(4).map((logo, index) => (
+                <motion.div
+                  key={index + 4}
+                  className="relative group flex items-center justify-center"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-green-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className={`relative z-10 filter brightness-110 hover:brightness-125 transition-all duration-300 ${
+                      logo.alt === 'IIC Logo' ? 'w-[150px] h-[150px] object-contain' :
+                      logo.alt === 'AICTE Logo' ? 'w-[150px] h-[150px] object-contain' :
+                      logo.alt === 'NAAC Logo' ? 'w-[150px] h-[150px] object-contain' :
+                      logo.alt === 'College Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      logo.alt === 'Euphoria Logo' ? 'w-[150px] h-[150px] object-contain' :
+                      logo.alt === 'SPO Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      logo.alt === 'IICMCKVIE Logo' ? 'w-[100px] h-[100px] object-contain' :
+                      'w-[150px] h-[150px] object-contain'
+                    }`}
+                    style={{
+                      filter: logo.alt === 'NBA Logo' ? 'brightness(400%) contrast(120%)' : 'brightness(120%)'
+                    }}
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
 
