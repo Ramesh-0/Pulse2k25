@@ -7,9 +7,9 @@ import NAAC from '../images/NAAC.png';
 import clgLogo from '../images/clglogo.png';
 import IIC from '../images/IIC.png';
 import NBA from '../images/NBA.png';
-import Euphoria from '../images/Euphoria.png';
-import SPO from '../images/SPO.png';
-import IICMCKVIE from '../images/IICMCKVIE.png';
+import Euphoria from '../images/euphoria.png';
+import SPO from '../images/spo.png';
+import IICMCKVIE from '../images/iicmckvie.png';
 
 const CountdownItem = ({ value, label }) => (
   <motion.div
