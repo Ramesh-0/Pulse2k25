@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const TeamRoomAllotment = () => {
   const [billNo, setBillNo] = useState('');
   const [roomDetails, setRoomDetails] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [eventDetails, setEventDetails] = useState({
     name: 'PULSE.exe 2K25',
     venue: 'IT Department',
@@ -96,15 +97,21 @@ const TeamRoomAllotment = () => {
   const [billingData] = useState(generateDummyData());
 
   const handleSearch = () => {
+    setIsLoading(true);
     const billNumber = parseInt(billNo);
-    if (billNumber >= 18201 && billNumber <= 18260) {
-      if (billingData[billNumber]) {
-        setRoomDetails(billingData[billNumber]);
+    
+    // Add a small delay to show the loading effect
+    setTimeout(() => {
+      if (billNumber >= 18201 && billNumber <= 18260) {
+        if (billingData[billNumber]) {
+          setRoomDetails(billingData[billNumber]);
+        }
+      } else {
+        setRoomDetails(null);
+        alert('Bill number is invalid. Please complete your payment to get your room allotment.');
       }
-    } else {
-      setRoomDetails(null);
-      alert('Bill number is invalid. Please complete your payment to get your room allotment.');
-    }
+      setIsLoading(false);
+    }, 500); // 500ms delay for the buffer effect
   };
 
   const containerVariants = {
@@ -212,38 +219,54 @@ const TeamRoomAllotment = () => {
         </motion.div>
 
         {/* Results */}
-        {roomDetails && (
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="p-6 bg-[#071912] rounded-lg shadow-lg border border-emerald-900/30 backdrop-blur-sm
-                     hover:border-emerald-400/50 transition-all duration-300
-                     hover:shadow-[0_0_25px_rgba(52,211,153,0.15)]"
-          >
-            <h2 className="text-xl font-semibold mb-4 text-white">Room Allocation Details</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6">
-              <div>
-                <p className="text-gray-300"><span className="font-medium text-emerald-300">Bill Number:</span> {roomDetails.billNo}</p>
-                <p className="text-gray-300"><span className="font-medium text-emerald-300">Team Name:</span> {roomDetails.teamName}</p>
+        <AnimatePresence mode="wait">
+          {isLoading ? (
+            <motion.div
+              key="loading"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="p-6 bg-[#071912] rounded-lg shadow-lg border border-emerald-900/30 backdrop-blur-sm"
+            >
+              <div className="flex justify-center items-center h-32">
+                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-emerald-500"></div>
               </div>
-              <div>
-                <p className="text-gray-300"><span className="font-medium text-emerald-300">Event:</span> {roomDetails.eventName}</p>
-                <p className="text-gray-300"><span className="font-medium text-emerald-300">Status:</span> 
-                  <span className={`ml-1 font-medium ${
-                    roomDetails.status === 'Confirmed' ? 'text-emerald-400' : 
-                    roomDetails.status === 'Pending' ? 'text-yellow-400' : 'text-blue-400'
-                  }`}>
-                    {roomDetails.status}
-                  </span>
-                </p>
-                <p className="text-gray-300"><span className="font-medium text-emerald-300">Allotted Room:</span> 
-                  <span className="ml-1 text-emerald-400 font-bold">{roomDetails.room}</span>
-                </p>
+            </motion.div>
+          ) : roomDetails ? (
+            <motion.div 
+              key="results"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="p-6 bg-[#071912] rounded-lg shadow-lg border border-emerald-900/30 backdrop-blur-sm
+                       hover:border-emerald-400/50 transition-all duration-300
+                       hover:shadow-[0_0_25px_rgba(52,211,153,0.15)]"
+            >
+              <h2 className="text-xl font-semibold mb-4 text-white">Room Allocation Details</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6">
+                <div>
+                  <p className="text-gray-300"><span className="font-medium text-emerald-300">Bill Number:</span> {roomDetails.billNo}</p>
+                  <p className="text-gray-300"><span className="font-medium text-emerald-300">Team Name:</span> {roomDetails.teamName}</p>
+                </div>
+                <div>
+                  <p className="text-gray-300"><span className="font-medium text-emerald-300">Event:</span> {roomDetails.eventName}</p>
+                  <p className="text-gray-300"><span className="font-medium text-emerald-300">Status:</span> 
+                    <span className={`ml-1 font-medium ${
+                      roomDetails.status === 'Confirmed' ? 'text-emerald-400' : 
+                      roomDetails.status === 'Pending' ? 'text-yellow-400' : 'text-blue-400'
+                    }`}>
+                      {roomDetails.status}
+                    </span>
+                  </p>
+                  <p className="text-gray-300"><span className="font-medium text-emerald-300">Allotted Room:</span> 
+                    <span className="ml-1 text-emerald-400 font-bold">{roomDetails.room}</span>
+                  </p>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        )}
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
       </motion.div>
     </div>
   );
