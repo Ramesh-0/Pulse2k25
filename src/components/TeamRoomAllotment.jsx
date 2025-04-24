@@ -16,17 +16,78 @@ const TeamRoomAllotment = () => {
     window.scrollTo(0, 0);
   }, []);
   
-  // Generate dummy data for bill numbers 1-100
+  // Generate dummy data for bill numbers 18201-18260
   const generateDummyData = () => {
     const dummyData = {};
-    for (let i = 1; i <= 100; i++) {
+    const teamNames = {
+      18201: 'Dynamic Duo',
+      18202: 'Mariners',
+      18203: 'Kuch Bhi',
+      18204: 'Epsilon',
+      18205: 'Bubbles',
+      18206: 'A2',
+      18207: 'Reccurssion',
+      18208: 'Code-Crafters',
+      18209: 'Kit-Kat',
+      18210: 'Team Blue',
+      18211: 'Mid-Bencher',
+      18212: 'Albatross',
+      18213: 'Bestie Bugs',
+      18214: 'Triad',
+      18215: 'Study Buddies',
+      18216: 'IT-Architects',
+      18217: 'Tech Titans',
+      18218: 'The Congregation',
+      18219: 'Backlog Bashers',
+      18220: 'Mind-Masters',
+      18221: 'Grid',
+      18222: 'Pulse Duo',
+      18223: 'Mech-Tech',
+      18224: 'The Thinking Tank',
+      18225: 'The Smartinis',
+      18226: 'Defender',
+      18227: 'Code Catalyst',
+      18228: 'Code-Warriors',
+      18229: 'Thinkerz',
+      18230: 'Glimpse',
+      18231: 'BiZero',
+      18232: 'Surya',
+      18233: 'Neuro nauts',
+      18234: 'Infinity',
+      18235: 'Fusion Force',
+      18236: 'The Quantum Core',
+      18237: 'Quanta mania',
+      18238: 'Elite',
+      18239: 'The Puzzlers',
+      18240: 'Logical Legends',
+      18241: 'Cyber_Natics',
+      18242: 'Brainware Builders',
+      18243: 'STAR',
+      18244: 'Bug Buster',
+      18245: 'Dora Dora',
+      18246: 'The Broken Brains',
+      18247: 'Binary Busters',
+      18248: 'The Boys Group',
+      18249: 'BrainEbunch',
+      18250: 'Coduo',
+      18251: 'Magic Malware',
+      18252: 'Caraxes',
+      18253: 'Defenders',
+      18254: 'Gladiators',
+      18255: 'Neural Nexus',
+      18256: 'Diptadeep Dey',
+      18257: 'Elixer_Dos',
+      18258: 'R2R',
+      18259: 'Brain Rot'
+    };
+
+    for (let i = 18201; i <= 18260; i++) {
       dummyData[i] = {
         billNo: i,
-        teamName: `Team ${i}`,
-        participantCount: Math.floor(Math.random() * 5) + 2, // 2-6 participants
-        room: i <= 40 ? 'A201' : 'A202', // Bill 1-40 in A201, rest in A202
-        eventName: ['Elimination Round', 'Idea Submission', 'Final Prototype'][Math.floor(Math.random() * 4)],
-        status: ['Confirmed', 'Pending', 'Completed'][Math.floor(Math.random() * 3)]
+        teamName: teamNames[i] || `Team ${i}`,
+        room: i <= 18230 ? 'SIT Hall Basement A-Block' : 'A201 2nd Floor A-Block',
+        eventName: 'PULSE.exe 2K25',
+        status: 'Confirmed'
       };
     }
     return dummyData;
@@ -35,11 +96,14 @@ const TeamRoomAllotment = () => {
   const [billingData] = useState(generateDummyData());
 
   const handleSearch = () => {
-    if (billNo && billingData[billNo]) {
-      setRoomDetails(billingData[billNo]);
+    const billNumber = parseInt(billNo);
+    if (billNumber >= 18201 && billNumber <= 18260) {
+      if (billingData[billNumber]) {
+        setRoomDetails(billingData[billNumber]);
+      }
     } else {
       setRoomDetails(null);
-      alert('Bill number not found!');
+      alert('Bill number is invalid. Please complete your payment to get your room allotment.');
     }
   };
 
@@ -109,25 +173,6 @@ const TeamRoomAllotment = () => {
           </div>
         </motion.div>
 
-        {/* Warning Message */}
-        <motion.div 
-          variants={itemVariants}
-          className="mb-8 p-6 bg-yellow-500/10 rounded-lg border border-yellow-500/30 backdrop-blur-sm"
-        >
-          <div className="flex items-start space-x-3">
-            <svg className="w-6 h-6 text-yellow-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
-            <div>
-              <h3 className="text-lg font-semibold text-yellow-400 mb-2">Important Notice</h3>
-              <p className="text-yellow-300/90">
-                The Team Room Allotment feature will only be available after the registration period closes. 
-                Please check back after April 12, 2025 to view your allotted room and other details.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-        
         {/* Manual Search */}
         <motion.div 
           variants={itemVariants}
@@ -144,8 +189,13 @@ const TeamRoomAllotment = () => {
                 id="billNo"
                 value={billNo}
                 onChange={(e) => setBillNo(e.target.value)}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter') {
+                    handleSearch();
+                  }
+                }}
                 className="w-full px-4 py-2 bg-[#040d09] border border-emerald-900/50 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                placeholder="Enter bill number (1-100)"
+                placeholder="Enter bill number (Starting from 18201)"
               />
             </div>
             <div className="ml-4 self-end">
@@ -176,7 +226,6 @@ const TeamRoomAllotment = () => {
               <div>
                 <p className="text-gray-300"><span className="font-medium text-emerald-300">Bill Number:</span> {roomDetails.billNo}</p>
                 <p className="text-gray-300"><span className="font-medium text-emerald-300">Team Name:</span> {roomDetails.teamName}</p>
-                <p className="text-gray-300"><span className="font-medium text-emerald-300">Participants:</span> {roomDetails.participantCount}</p>
               </div>
               <div>
                 <p className="text-gray-300"><span className="font-medium text-emerald-300">Event:</span> {roomDetails.eventName}</p>
